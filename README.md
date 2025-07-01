@@ -7,7 +7,7 @@
 - Spring Boot 3.5.3
 - Gradle
 - Mustache 템플릿 엔진
-- JPA + H2
+- JPA
 
 ## 🛠 주요 기능
 - 영화 목록 조회
