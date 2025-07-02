@@ -90,4 +90,5 @@ public class MovieServiceImpl implements MovieService {
         BeanUtils.copyProperties(movieDto, movie);
         return movie;
     }
+
 }

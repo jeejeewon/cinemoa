@@ -10,12 +10,12 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/movies")
@@ -71,10 +71,84 @@ public class MovieController {
 
     @GetMapping("/{id}")
     public String viewMovie(@PathVariable("id") Long id, Model model) {
-        MovieDto movie = movieService.getMovieById(id)
-                .orElseThrow(() -> new IllegalArgumentException("Invalid movie Id:" + id));
-        model.addAttribute("movie", movie);
-        return "movies/view";
+        Optional<MovieDto> movieDtoOptional = movieService.getMovieById(id);
+
+        if (movieDtoOptional.isPresent()) {
+            MovieDto movieDto = movieDtoOptional.get();
+
+            // videoUrl 처리
+            if (movieDto.getVideoUrl() != null && !movieDto.getVideoUrl().isEmpty()) {
+                String videoUrl = movieDto.getVideoUrl();
+                // 이미 전체 URL인 경우 그대로 사용
+                if (videoUrl.startsWith("https://www.youtube.com/embed/")) {
+                    // 이미 올바른 형식이므로 그대로 사용
+                }
+                // youtube.com/watch?v= 형식인 경우 embed 형식으로 변환
+                else if (videoUrl.contains("youtube.com/watch?v=")) {
+                    String videoId = videoUrl.split("v=")[1];
+                    // 추가 파라미터가 있는 경우 제거
+                    int ampersandPosition = videoId.indexOf('&');
+                    if (ampersandPosition != -1) {
+                        videoId = videoId.substring(0, ampersandPosition);
+                    }
+                    movieDto.setVideoUrl("https://www.youtube.com/embed/" + videoId);
+                }
+                // ID만 있는 경우 embed URL로 변환
+                else {
+                    movieDto.setVideoUrl("https://www.youtube.com/embed/" + videoUrl);
+                }
+            }
+
+            model.addAttribute("movie", movieDto);
+            return "movies/view";
+        } else {
+            return "redirect:/movies";
+        }
     }
+
+    @GetMapping("/new")
+    public String showNewMovieForm(Model model) {
+        model.addAttribute("movie", new MovieDto());
+        return "movies/new";
+    }
+
+    @PostMapping("/new")
+    public String saveNewMovie(@ModelAttribute("movie") MovieDto movieDto,
+                               RedirectAttributes redirectAttributes) {
+        MovieDto savedMovie = movieService.saveMovie(movieDto);
+        redirectAttributes.addFlashAttribute("message", "영화가 성공적으로 등록되었습니다.");
+        return "redirect:/movies";
+    }
+
+    // 영화 수정 폼 보여주기
+    @GetMapping("/{id}/edit")
+    public String showEditForm(@PathVariable Long id, Model model) {
+        Optional<MovieDto> movieDto = movieService.getMovieById(id);
+
+        if (movieDto.isPresent()) {
+            model.addAttribute("movie", movieDto.get());
+            return "movies/edit";
+        } else {
+            return "redirect:/movies";
+        }
+    }
+
+    // 영화 수정 처리
+    @PostMapping("/{id}/edit")
+    public String updateMovie(@PathVariable Long id,
+                              @ModelAttribute("movie") MovieDto movieDto,
+                              RedirectAttributes redirectAttributes) {
+        MovieDto updatedMovie = movieService.updateMovie(id, movieDto);
+
+        if (updatedMovie != null) {
+            redirectAttributes.addFlashAttribute("message", "영화가 성공적으로 수정되었습니다.");
+        } else {
+            redirectAttributes.addFlashAttribute("error", "영화 수정에 실패했습니다.");
+        }
+
+        return "redirect:/movies/" + id;
+    }
+
+
 
 }
