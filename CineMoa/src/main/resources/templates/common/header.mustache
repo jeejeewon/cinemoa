@@ -1,7 +1,7 @@
 <header>
     <div>
         <a href="/">로고</a>
-        <nav>
+        <nav class="member-info-wrap">
             <ul>
                 <li><a href="/login">로그인</a></li>
                 <li><a href="/signup">회원가입</a></li>
@@ -13,10 +13,24 @@
 
     <nav>
         <ul>
-            <li><a href="/movies">영화</a></li>
-            <li><a href="/ticketing">예매</a></li>
+            <li>
+                <a href="/movies">영화</a>
+                <ul>
+                    <li><a href="/movies/now">현재상영작</a></li>
+                    <li><a href="/movies/soon">상영예정작</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="/ticketing">예매</a></li>
             <li><a href="/cinemas">극장</a></li>
-            <li><a href="/event">이벤트</a></li>
+            <li>
+                <a href="/event">이벤트</a>
+                <ul>
+                    <li><a href="/event">진행중인 이벤트</a></li>
+                    <li><a href="/event/end">지난 이벤트</a></li>
+                    <li><a href="/event/winner">당첨자 발표</a></li>
+                </ul>
+            </li>
             <li><a href="/store">스토어or혜택안내</a></li>
         </ul>
     </nav>

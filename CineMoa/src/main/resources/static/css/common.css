@@ -1,0 +1,66 @@
+
+header nav > ul {
+  display: flex;
+  gap: 20px;
+}
+
+header nav > ul > li {
+  position: relative;
+}
+
+/* 메인 메뉴 */
+header nav > ul > li > a {
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+/* 서브메뉴: 숨김 상태 */
+header nav > ul > li > ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  background-color: #fff;
+  border-top: 1px solid #ccc;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  z-index: 1000;
+  gap: 20px;
+}
+
+/* 호버 시 보여줌 */
+header nav > ul > li:hover > ul {
+  display: flex;
+}
+
+/* 서브메뉴 항목 */
+header nav > ul > li > ul > li a {
+  white-space: nowrap;
+  color: #333;
+  text-decoration: none;
+  padding: 6px 12px;
+  display: inline-block;
+}
+
+header nav > ul > li > ul > li a:hover {
+  background-color: #f0f0f0;
+}
+
+/* 상단 회원메뉴 */
+.member-info-wrap ul {
+  display: flex;
+  gap: 15px;
+}
+
+.member-info-wrap li a {
+  text-decoration: none;
+  color: #333;
+  padding: 6px 10px;
+}
+
+.member-info-wrap li a:hover {
+  text-decoration: underline;
+}
