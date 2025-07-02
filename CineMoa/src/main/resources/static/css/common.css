@@ -60,7 +60,3 @@ header nav > ul > li > ul > li a:hover {
   color: #333;
   padding: 6px 10px;
 }
-
-.member-info-wrap li a:hover {
-  text-decoration: underline;
-}
