@@ -10,6 +10,7 @@ public class MainController {
     @GetMapping("/")
     public String showMain(Model model) {
         model.addAttribute("title", "CineMoa");// {{title}}에 들어갈 값 적기
+        model.addAttribute("timestamp", System.currentTimeMillis());
         return "main/main"; // templates/main/main.mustache
     }
 

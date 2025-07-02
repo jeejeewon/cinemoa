@@ -34,3 +34,15 @@ dependencies {
 tasks.test {
 	useJUnitPlatform()
 }
+
+bootRun {
+	sourceResources sourceSets.main
+}
+
+configurations {
+	developmentOnly
+	runtimeClasspath {
+		extendsFrom developmentOnly
+	}
+}
+

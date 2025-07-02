@@ -1,7 +1,14 @@
-
+header {
+}
 header nav > ul {
   display: flex;
   gap: 20px;
+}
+
+.logo svg {
+  width: 150px;
+  height: auto; /* 비율 유지 */
+  color: red;
 }
 
 header nav > ul > li {

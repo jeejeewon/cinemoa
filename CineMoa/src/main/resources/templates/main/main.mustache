@@ -1,33 +1,36 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{{title}}</title>
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/common.css"><!--공통 css-->
-    <link rel="stylesheet" href="/css/main.css">
-</head>
-<body>
-{{> common/header }}
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="/css/reset.css" />
+    <link rel="stylesheet" href="/css/common.css?v={{ timestamp }}" />
+    <link rel="stylesheet" href="/css/main.css?v={{ timestamp }}" />
+  </head>
+  <body>
+    {{> common/header }}
 
-<main>
-    <section>
+    <main>
+      <section>
         <h2>현재 상영 중인 영화</h2>
         <ul>
-            <li>영화1</li>
-            <li>영화2</li>
+          <li>영화1</li>
+          <li>영화2</li>
         </ul>
-    </section>
-</main>
+      </section>
+    </main>
 
-{{> common/footer }}
+    {{> common/footer }}
 
-
-<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><!-- 제이쿼리 -->
-<script src="/js/common.js"></script><!-- 공통 JS -->
-<script src="/js/main.js"></script>
-</body>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <!-- 제이쿼리 -->
+    <script src="/js/common.js"></script>
+    <!-- 공통 JS -->
+    <script src="/js/main.js"></script>
+  </body>
 </html>
