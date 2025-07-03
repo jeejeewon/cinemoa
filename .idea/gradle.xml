@@ -5,8 +5,8 @@
     <option name="linkedExternalProjectsSettings">
       <GradleProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$/CineMoa" />
-        <option name="gradleJvm" value="#JAVA_HOME" />
-        <option name="modules">
+          <option name="gradleJvm" value="#JAVA_HOME" />
+          <option name="modules">
           <set>
             <option value="$PROJECT_DIR$/CineMoa" />
           </set>
