@@ -24,7 +24,6 @@ public class MemberController {
     //회원가입 페이지 (GET)
     @GetMapping("/join")
     public String showJoinForm(Model model){
-        model.addAttribute("title", "회원가입");
         model.addAttribute("timestamp", System.currentTimeMillis());
         return "member/join";
     }
