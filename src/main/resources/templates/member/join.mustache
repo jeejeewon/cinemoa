@@ -1,0 +1,56 @@
+{{> common/header }}
+<div class="container">
+    <h2>회원가입</h2>
+    <form method="post" action="/member/join" enctype="multipart/form-data">
+        <!-- 프로필 이미지 -->
+        <label for="profileImgFile">프로필 이미지</label>
+        <input type="file" name="profileImgFile" id="profileImgFile" accept="image/*">
+
+        <!-- 아이디 -->
+        <label for="memberId">아이디</label>
+        <input type="text" id="memberId" name="memberId" required>
+
+        <!-- 비밀번호 -->
+        <label for="password">비밀번호</label>
+        <input type="password" id="password" name="password" required>
+
+        <!-- 이름 -->
+        <label for="name">이름</label>
+        <input type="text" id="name" name="name" required>
+
+        <!-- 닉네임 -->
+        <label for="nickname">닉네임</label>
+        <input type="text" id="nickname" name="nickname" required>
+
+        <!-- 생년월일 -->
+        <label for="birthDate">생년월일</label>
+        <input type="date" id="birthDate" name="birthDate">
+
+        <!-- 전화번호 -->
+        <label for="phone">휴대전화</label>
+        <input type="text" id="phone" name="phone">
+
+        <!-- 이메일 -->
+        <label for="email">이메일</label>
+        <input type="email" id="email" name="email">
+
+        <!-- 기념일 -->
+        <label for="anniversary">기념일</label>
+        <input type="date" id="anniversary" name="anniversary">
+
+        <!-- 주소 -->
+        <label for="address">주소</label>
+        <input type="text" id="address" name="address">
+
+        <!-- 자주 가는 영화관 -->
+        <label for="preferredCinema">자주 가는 영화관</label>
+        <input type="text" id="preferredCinema" name="preferredCinema">
+
+        <!-- 선호 장르 -->
+        <label for="preferredGenres">선호 장르 (콤마로 구분)</label>
+        <input type="text" id="preferredGenres" name="preferredGenres" placeholder="예: 액션,로맨스">
+
+        <button type="submit">가입하기</button>
+    </form>
+</div>
+{{> common/footer }}

@@ -1,0 +1,137 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", sans-serif;
+}
+
+/* 헤더 스타일 */
+header {
+  width: 100%;
+  border-bottom: 3px solid transparent;
+  border-image: linear-gradient(to right, #4320ab, #7571d9) 1;
+  background: #fff;
+}
+
+/* 로고 및 상단 메뉴 */
+.header-top {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo svg {
+  height: 50px;
+  color: #4320ab;
+}
+
+/* 로그인, 마이페이지 등 */
+.member-info-wrap ul {
+  display: flex;
+  gap: 5px;
+}
+
+.member-info-wrap li a {
+  font-size: 14px;
+  color: #666;
+  padding: 5px 10px;
+}
+
+/* 메인 내비게이션 */
+.main-nav {
+  background-color: #fff;
+  border-top: 1px solid #eee;
+}
+
+.main-nav > ul {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.main-nav > ul > li {
+  position: relative;
+}
+
+.main-nav > ul > li > a {
+  display: block;
+  padding: 20px 0;
+  font-weight: bold;
+  color: #222;
+  font-size: 16px;
+  transition: color 0.2s;
+}
+
+.main-nav > ul > li > a:hover {
+  color: #4320ab;
+}
+
+/* 서브메뉴 */
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  /* 화면 전체 너비 */
+  background: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 20px 0;
+  z-index: 999;
+  overflow-x: hidden;
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(to right, #4320ab, #7571d9) 1;
+}
+
+.submenu-inner {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.submenu li {
+  list-style: none;
+}
+
+.submenu li a {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.submenu-inner li a:hover {
+  color: #4320ab;
+}
+
+/* 메뉴에 마우스 올릴 때 서브메뉴 표시 */
+.main-nav > ul > li:hover .submenu {
+  display: block;
+}
+
+/*상단고정*/
+#main-nav.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #4320ab, #7571d9);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+#main-nav.fixed > ul > li > a {
+  color: #fff;
+}
+#main-nav.fixed > ul > li > a:hover {
+  color: #ffb428;
+}
+#main-nav.fixed .submenu {
+  border-top: none;
+}
