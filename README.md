@@ -4,7 +4,7 @@
 
 ## 📌 기술 스택
 - Java 21
-- Spring Boot 3.5.3
+- Spring Boot 3.2.10
 - Gradle
 - Mustache 템플릿 엔진
 - JPA
