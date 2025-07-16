@@ -10,15 +10,16 @@
     {{/error}}
 
     {{#movie}}
-        <form action="/movies/{{movieId}}/edit" method="post">
+        <form action="/movies/{{movieId}}/edit" method="post" enctype="multipart/form-data">
             <div class="form-group">
                 <label for="title">제목 *</label>
                 <input type="text" id="title" name="title" value="{{title}}" required>
             </div>
 
+            <!-- content textarea 대신 스마트에디터 적용 -->
             <div class="form-group">
                 <label for="content">내용</label>
-                <textarea id="content" name="content" rows="5">{{#content}}{{content}}{{/content}}</textarea>
+                <textarea name="content" id="ir1" rows="10" cols="100" style="width:100%; height:400px; display:none;">{{#content}}{{content}}{{/content}}</textarea>
             </div>
 
             <div class="form-group">
@@ -28,7 +29,8 @@
 
             <div class="form-group">
                 <label for="actors">배우</label>
-                <input type="text" id="actors" name="actors" value="{{#actors}}{{actors}}{{/actors}}" placeholder="배우 이름을 쉼표로 구분하여 입력하세요">
+                <input type="text" id="actors" name="actors" value="{{#actors}}{{actors}}{{/actors}}"
+                       placeholder="배우 이름을 쉼표로 구분하여 입력하세요">
             </div>
 
             <div class="form-group">
@@ -38,27 +40,119 @@
 
             <div class="form-group">
                 <label for="releaseDate">개봉일</label>
-                <input type="date" id="releaseDate" name="releaseDate" value="{{#releaseDate}}{{releaseDate}}{{/releaseDate}}">
+                <input type="date" id="releaseDate" name="releaseDate"
+                       value="{{#releaseDate}}{{releaseDate}}{{/releaseDate}}">
+            </div>
+
+            <!-- 상영 상태 필드 -->
+            <div class="form-group">
+                <label for="screeningStatus">상영 상태</label>
+                <select id="screeningStatus" name="screeningStatus" class="form-control">
+                    <option value="NOW_SHOWING" {{#screeningStatus}}{{#isNowShowing}}selected{{/isNowShowing}}{{/screeningStatus}}>
+                        개봉중
+                    </option>
+                    <option value="COMING_SOON" {{#screeningStatus}}{{#isComingSoon}}selected{{/isComingSoon}}{{/screeningStatus}}>
+                        상영예정
+                    </option>
+                    <option value="NOT_SHOWING" {{#screeningStatus}}{{#isNotShowing}}selected{{/isNotShowing}}{{/screeningStatus}}>
+                        상영안함
+                    </option>
+                </select>
             </div>
 
             <div class="form-group">
                 <label for="rating">평점</label>
-                <input type="number" id="rating" name="rating" step="0.1" min="0" max="10" value="{{#rating}}{{rating}}{{/rating}}">
+                <input type="number" id="rating" name="rating" step="0.1" min="0" max="10"
+                       value="{{#rating}}{{rating}}{{/rating}}">
             </div>
 
             <div class="form-group">
                 <label for="reservationRate">예매율</label>
-                <input type="number" id="reservationRate" name="reservationRate" step="0.1" min="0" max="100" value="{{#reservationRate}}{{reservationRate}}{{/reservationRate}}">
+                <input type="number" id="reservationRate" name="reservationRate" step="0.1" min="0" max="100"
+                       value="{{#reservationRate}}{{reservationRate}}{{/reservationRate}}">
+            </div>
+            <div class="form-group">
+                <label for="ageRating">관람등급</label>
+                <select id="ageRating" name="ageRating" class="form-control">
+                    <option value="ALL" {{#isAllRating}}selected{{/isAllRating}}>전체관람가</option>
+                    <option value="12" {{#is12Rating}}selected{{/is12Rating}}>12세 이상</option>
+                    <option value="15" {{#is15Rating}}selected{{/is15Rating}}>15세 이상</option>
+                    <option value="19" {{#is19Rating}}selected{{/is19Rating}}>19세 이상</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="runningTime">러닝타임 (분)</label>
+                <input type="number" id="runningTime" name="runningTime" min="0" value="{{runningTime}}">
             </div>
 
+            <!-- 메인 이미지 섹션 - 조건부 렌더링 사용 -->
             <div class="form-group">
-                <label for="mainImageUrl">메인 이미지 URL</label>
-                <input type="text" id="mainImageUrl" name="mainImageUrl" value="{{#mainImageUrl}}{{mainImageUrl}}{{/mainImageUrl}}">
+                <label>메인 이미지</label>
+                <div class="image-preview-container">
+                    <!-- mainImageUrl이 있을 때만 이미지 표시 -->
+                    {{#mainImageUrl}}
+                        <div class="image-preview" id="main-image-preview-wrapper">
+                            <img src="/images/movie/{{mainImageUrl}}" alt="메인 이미지" class="img-thumbnail">
+                            <button type="button" class="btn btn-sm btn-danger delete-image" data-type="main">삭제
+                            </button>
+                        </div>
+                    {{/mainImageUrl}}
+                    <!-- mainImageUrl이 없을 때 메시지 표시 -->
+                    {{^mainImageUrl}}
+                        <p id="no-main-image-text">등록된 메인 이미지가 없습니다.</p>
+                    {{/mainImageUrl}}
+                </div>
+                <!-- hidden input은 mainImageUrl이 있을 때만 값 설정 -->
+                <input type="hidden" id="mainImageUrlInput" name="mainImageUrl"
+                       value="{{#mainImageUrl}}{{mainImageUrl}}{{/mainImageUrl}}">
+                <div class="mt-2">
+                    <label for="mainImageFile">새 메인 이미지 업로드</label>
+                    <input type="file" id="mainImageFile" name="mainImageFile" accept="image/*" class="form-control">
+                </div>
             </div>
 
+            <!-- 서브 이미지 섹션 - 조건부 렌더링 사용 -->
             <div class="form-group">
-                <label for="detailImageUrls">상세 이미지 URL</label>
-                <input type="text" id="detailImageUrls" name="detailImageUrls" value="{{#detailImageUrls}}{{detailImageUrls}}{{/detailImageUrls}}" placeholder="URL을 쉼표로 구분하여 입력하세요">
+                <label>서브 이미지</label>
+                <div class="image-preview-container">
+                    {{#subImageUrls}}
+                        <div class="image-preview" id="sub-image-preview-wrapper">
+                            <img src="/images/movie/{{subImageUrls}}" alt="서브 이미지" class="img-thumbnail">
+                            <button type="button" class="btn btn-sm btn-danger delete-image" data-type="sub">삭제</button>
+                        </div>
+                    {{/subImageUrls}}
+                    {{^subImageUrls}}
+                        <p id="no-sub-image-text">등록된 서브 이미지가 없습니다.</p>
+                    {{/subImageUrls}}
+                </div>
+                <input type="hidden" id="subImageUrlsInput" name="subImageUrls"
+                       value="{{#subImageUrls}}{{subImageUrls}}{{/subImageUrls}}">
+                <div class="mt-2">
+                    <label for="subImageFile">새 서브 이미지 업로드</label>
+                    <input type="file" id="subImageFile" name="subImageFile" accept="image/*" class="form-control">
+                </div>
+            </div>
+
+            <!-- 상세 이미지 섹션 -->
+            <div class="form-group">
+                <label>상세 이미지</label>
+                <div class="image-preview-container" id="detail-images-container">
+                    {{#detailImageUrlList}}
+                        <div class="image-preview detail-image-item" data-filename="{{.}}">
+                            <img src="/images/movie/{{.}}" alt="상세 이미지" class="img-thumbnail" style="max-height: 150px;">
+                            <button type="button" class="btn btn-sm btn-danger delete-detail-image">삭제</button>
+                        </div>
+                    {{/detailImageUrlList}}
+                    {{^detailImageUrlList}}
+                        <p id="no-detail-image-text">등록된 상세 이미지가 없습니다.</p>
+                    {{/detailImageUrlList}}
+                </div>
+                <input type="hidden" id="detailImageUrlsInput" name="detailImageUrls" value="{{detailImageUrls}}">
+                <div class="mt-2">
+                    <label for="detailImageFiles">새 상세 이미지 업로드</label>
+                    <input type="file" id="detailImageFiles" name="detailImageFiles" multiple accept="image/*" class="form-control">
+                    <small class="form-text text-muted">여러 이미지를 선택할 수 있습니다.</small>
+                </div>
             </div>
 
             <div class="form-group">
@@ -68,17 +162,20 @@
 
             <div class="form-group">
                 <label for="audienceCount">관객 수</label>
-                <input type="number" id="audienceCount" name="audienceCount" min="0" value="{{#audienceCount}}{{audienceCount}}{{/audienceCount}}">
+                <input type="number" id="audienceCount" name="audienceCount" min="0"
+                       value="{{#audienceCount}}{{audienceCount}}{{/audienceCount}}">
             </div>
 
             <div class="form-group">
                 <label for="likesCount">좋아요 수</label>
-                <input type="number" id="likesCount" name="likesCount" min="0" value="{{#likesCount}}{{likesCount}}{{/likesCount}}">
+                <input type="number" id="likesCount" name="likesCount" min="0"
+                       value="{{#likesCount}}{{likesCount}}{{/likesCount}}">
             </div>
 
             <div class="form-group">
                 <label for="reviewCount">리뷰 수</label>
-                <input type="number" id="reviewCount" name="reviewCount" min="0" value="{{#reviewCount}}{{reviewCount}}{{/reviewCount}}">
+                <input type="number" id="reviewCount" name="reviewCount" min="0"
+                       value="{{#reviewCount}}{{reviewCount}}{{/reviewCount}}">
             </div>
 
             <div class="button-group">
@@ -88,3 +185,259 @@
         </form>
     {{/movie}}
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+     // 메인, 서브 이미지 삭제 처리
+    document.querySelectorAll('.delete-image').forEach(button => {
+        button.addEventListener('click', function() {
+            const type = this.dataset.type; // 'main' 또는 'sub'
+            const previewWrapper = this.closest('.image-preview');
+            const container = this.closest('.image-preview-container');
+            const inputId = type === 'main' ? 'mainImageUrlInput' : 'subImageUrlsInput';
+
+            if (confirm(`${type === 'main' ? '메인' : '서브'} 이미지를 삭제하시겠습니까?`)) {
+                // 이미지 미리보기 제거
+                if (previewWrapper) {
+                    previewWrapper.remove();
+                }
+
+                // hidden input 값 비우기
+                const hiddenInput = document.getElementById(inputId);
+                if (hiddenInput) {
+                    hiddenInput.value = '';
+                }
+
+                // "등록된 이미지가 없습니다" 메시지 표시
+                const noImageText = document.createElement('p');
+                noImageText.id = `no-${type}-image-text`;
+                noImageText.textContent = `등록된 ${type === 'main' ? '메인' : '서브'} 이미지가 없습니다.`;
+                container.appendChild(noImageText);
+            }
+        });
+    });
+
+     // 상세 이미지 개별 삭제 처리
+    document.querySelectorAll('.delete-detail-image').forEach(button => {
+        button.addEventListener('click', function() {
+            const item = this.closest('.detail-image-item');
+            const filename = item.dataset.filename;
+            const container = document.getElementById('detail-images-container');
+            const detailImageUrlsInput = document.getElementById('detailImageUrlsInput');
+
+            if (confirm('이 상세 이미지를 삭제하시겠습니까?')) {
+                // DOM에서 이미지 제거
+                item.remove();
+
+                // hidden input 값 업데이트
+                if (detailImageUrlsInput) {
+                    let currentUrls = detailImageUrlsInput.value.split(',').map(url => url.trim()).filter(url => url !== '');
+                    const updatedUrls = currentUrls.filter(url => url !== filename);
+                    detailImageUrlsInput.value = updatedUrls.join(',');
+
+                    console.log('삭제된 이미지:', filename);
+                    console.log('남은 이미지 URL들:', detailImageUrlsInput.value);
+
+                    // 모든 상세 이미지가 삭제되면 "등록된 상세 이미지가 없습니다" 메시지 표시
+                    if (updatedUrls.length === 0) {
+                        const noDetailImageText = document.createElement('p');
+                        noDetailImageText.id = 'no-detail-image-text';
+                        noDetailImageText.textContent = '등록된 상세 이미지가 없습니다.';
+                        container.appendChild(noDetailImageText);
+                    }
+                }
+            }
+        });
+    });
+
+    // 새 상세 이미지 선택 시 미리보기 표시
+    const detailImageFilesInput = document.getElementById('detailImageFiles');
+    detailImageFilesInput.addEventListener('change', function(event) {
+        const files = event.target.files;
+        const container = document.getElementById('detail-images-container');
+        const noDetailImageText = document.getElementById('no-detail-image-text');
+
+        if (files && files.length > 0) {
+            // "등록된 상세 이미지가 없습니다" 메시지 제거
+            if (noDetailImageText) {
+                noDetailImageText.remove();
+            }
+
+            // 각 파일에 대한 미리보기 생성
+            for (let i = 0; i < files.length; i++) {
+                const file = files[i];
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    const previewDiv = document.createElement('div');
+                    previewDiv.className = 'image-preview detail-image-item new-upload';
+                    previewDiv.dataset.fileIndex = i;
+
+                    const img = document.createElement('img');
+                    img.src = e.target.result;
+                    img.className = 'img-thumbnail';
+                    img.style.maxHeight = '150px';
+                    img.alt = '새 상세 이미지';
+
+                    const removeBtn = document.createElement('button');
+                    removeBtn.type = 'button';
+                    removeBtn.className = 'btn btn-sm btn-danger remove-new-image';
+                    removeBtn.textContent = '취소';
+
+                    previewDiv.appendChild(img);
+                    previewDiv.appendChild(removeBtn);
+                    container.appendChild(previewDiv);
+
+                    // 새로 추가된 이미지 취소 버튼에 이벤트 리스너 추가
+                    removeBtn.addEventListener('click', function() {
+                        const fileIndex = previewDiv.dataset.fileIndex;
+                        previewDiv.remove();
+
+                        // 중요: input 필드에서도 파일 제거
+                        // 현재 선택된 파일들을 DataTransfer 객체로 복사
+                        const dt = new DataTransfer();
+                        const input = detailImageFilesInput;
+                        const { files } = input;
+
+                        // 삭제하려는 파일을 제외한 나머지 파일들만 새 DataTransfer에 추가
+                        for (let j = 0; j < files.length; j++) {
+                            if (j != fileIndex) dt.items.add(files[j]);
+                        }
+
+                        // input의 files를 새로운 FileList로 교체
+                        input.files = dt.files;
+
+                        // 모든 미리보기가 제거되었고 기존 이미지도 없으면 "등록된 상세 이미지가 없습니다" 메시지 표시
+                        const existingImages = container.querySelectorAll('.detail-image-item:not(.new-upload)');
+                        const newImages = container.querySelectorAll('.new-upload');
+
+                        if (existingImages.length === 0 && newImages.length === 0) {
+                            const noDetailImageText = document.createElement('p');
+                            noDetailImageText.id = 'no-detail-image-text';
+                            noDetailImageText.textContent = '등록된 상세 이미지가 없습니다.';
+                            container.appendChild(noDetailImageText);
+                        }
+                    });
+                };
+
+                reader.readAsDataURL(file);
+            }
+        }
+    });
+
+     // 새 파일 선택 시 미리보기 업데이트 (선택 사항)
+     document.getElementById('mainImageFile').addEventListener('change', function(event) {
+         updateImagePreview(event.target, 'main-image-preview-wrapper', 'mainImageUrlInput', 'no-main-image-text');
+     });
+     document.getElementById('subImageFile').addEventListener('change', function(event) {
+         updateImagePreview(event.target, 'sub-image-preview-wrapper', 'subImageUrlsInput', 'no-sub-image-text');
+     });
+     // 상세 이미지는 multiple이라 미리보기 로직이 더 복잡해져서 여기서는 생략. 필요시 구현
+     // document.getElementById('detailImageFiles').addEventListener('change', function(event) { /* ... */ });
+
+     function updateImagePreview(input, wrapperId, hiddenInputId, noImageTextId) {
+         const wrapper = document.getElementById(wrapperId);
+         const hiddenInput = document.getElementById(hiddenInputId);
+         const noImageText = document.getElementById(noImageTextId);
+
+         if (input.files && input.files[0]) {
+             const reader = new FileReader();
+             reader.onload = function(e) {
+                 let imgWrapper = wrapper;
+                 if (!imgWrapper) {
+                     // 미리보기 래퍼가 없으면 새로 생성
+                     imgWrapper = document.createElement('div');
+                     imgWrapper.className = 'image-preview';
+                     imgWrapper.id = wrapperId;
+                     const img = document.createElement('img');
+                     img.className = 'img-thumbnail';
+                     imgWrapper.appendChild(img);
+                     const deleteBtn = document.createElement('button');
+                     deleteBtn.type = 'button';
+                     deleteBtn.className = 'btn btn-sm btn-danger delete-image';
+                     deleteBtn.textContent = '삭제';
+                     deleteBtn.dataset.type = input.id.includes('main') ? 'main' : 'sub';
+                     imgWrapper.appendChild(deleteBtn);
+
+                     // 새 미리보기 추가 시 기존 "없음" 텍스트 제거
+                     if (noImageText) noImageText.remove();
+
+                     // DOM에 추가
+                     input.closest('.form-group').querySelector('.image-preview-container').appendChild(imgWrapper);
+
+                     // 새로 추가된 삭제 버튼에 이벤트 리스너 다시 연결
+                     deleteBtn.addEventListener('click', function() {
+                         const type = this.dataset.type;
+                         const wrapperId = `${type}-image-preview-wrapper`;
+                         const inputId = `${type}ImageUrlInput`;
+                         const noImageTextId = `no-${type}-image-text`;
+
+                         const wrapper = document.getElementById(wrapperId);
+                         if (wrapper) wrapper.remove();
+                         const hiddenInput = document.getElementById(inputId);
+                         if (hiddenInput) hiddenInput.value = '';
+                         let noImageText = document.getElementById(noImageTextId);
+                         if (!noImageText) {
+                             noImageText = document.createElement('p');
+                             noImageText.id = noImageTextId;
+                             noImageText.textContent = `등록된 ${type === 'main' ? '메인' : '서브'} 이미지가 없습니다.`;
+                             this.closest('.image-preview-container').appendChild(noImageText);
+                         }
+                     });
+                 }
+                 imgWrapper.querySelector('img').src = e.target.result;
+                 // 새 파일 선택 시 hidden input 값은 비워둠 (서버에서 MultipartFile로 처리)
+                 if (hiddenInput) hiddenInput.value = '';
+             };
+             reader.readAsDataURL(input.files[0]);
+         } else {
+             // 파일 선택 취소 시
+             if (wrapper) wrapper.remove();
+             if (hiddenInput) hiddenInput.value = '';
+             if (!noImageText) {
+                 const newNoImageText = document.createElement('p');
+                 newNoImageText.id = noImageTextId;
+                 newNoImageText.textContent = `등록된 ${input.id.includes('main') ? '메인' : '서브'} 이미지가 없습니다.`;
+                 input.closest('.form-group').querySelector('.image-preview-container').appendChild(newNoImageText);
+             }
+         }
+     }
+ });
+</script>
+
+<!-- 스마트에디터 스크립트 -->
+<script type="text/javascript" src="/se2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript">
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+        oAppRef: oEditors,
+        elPlaceHolder: "ir1", // 에디터를 적용할 textarea의 ID
+        sSkinURI: "/se2/SmartEditor2Skin.html", // 에디터 스킨 파일 경로
+        htParams : {
+            bUseToolbar : true,             // 툴바 사용 여부 (true:사용/false:사용안함)
+            bUseVerticalResizer : true,     // 입력창 크기 조절바 사용 여부 (true:사용/false:사용안함)
+            bUseModeChanger : true,         // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/false:사용안함)
+            fOnAppLoad : function(){
+                // 에디터 로딩 후 기존 내용 설정 (수정 모드 시)
+                // textarea에 이미 Mustache로 값이 채워져 있으므로, 그 값을 에디터로 로드
+                oEditors.getById["ir1"].exec("PASTE_HTML", [document.getElementById("ir1").value]);
+            },
+            fCreator: "createSEditor2"
+        },
+        fOnBeforeUnload : function(){
+            // 에디터 내용이 textarea에 적용될 때 (폼 제출 전)
+        }
+    });
+
+    // 폼 제출 전에 에디터의 내용을 textarea에 반영하는 함수
+    function submitContents(elEditor) {
+        oEditors.getById[elEditor].exec("UPDATE_CONTENTS_FIELD", []); // 에디터의 내용을 textarea에 적용
+        // 필요하다면 여기서 추가적인 유효성 검사 등을 수행할 수 있습니다.
+        return true; // true를 반환해야 폼이 제출됩니다.
+    }
+
+    // 폼 제출 시 submitContents 함수 호출
+    document.querySelector('form').onsubmit = function() {
+        return submitContents("ir1");
+    };
+</script>

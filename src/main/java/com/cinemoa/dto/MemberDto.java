@@ -26,5 +26,5 @@ public class MemberDto {
     private String address;
     private String preferredCinema;
     private String preferredGenres;
-
+    private LocalDate regDate;
 }

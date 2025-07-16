@@ -1,5 +1,6 @@
 package com.cinemoa.dto;
 
+import com.cinemoa.entity.Movie;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -27,11 +28,51 @@ public class MovieDto {
     private Integer likesCount;
     private Integer reviewCount;
     private String mainImageUrl;
+    private String subImageUrls; // 서브 이미지 URL 필드 추가
     private String detailImageUrls;
     private String videoUrl;
     private BigInteger audienceCount;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+    private Movie.ScreeningStatus screeningStatus; // 상영 상태 추가
+
+    // 관람등급과 러닝타임 필드 추가
+    private String ageRating;  // 전체관람가, 12세, 15세, 청소년관람불가 등
+    private Integer runningTime;  // 분 단위로 저장 (예: 120분)
+
+
+    public boolean isNowShowing() {
+        return this.screeningStatus != null && this.screeningStatus == Movie.ScreeningStatus.NOW_SHOWING;
+    }
+
+    public boolean isComingSoon() {
+        return this.screeningStatus != null && this.screeningStatus == Movie.ScreeningStatus.COMING_SOON;
+    }
+
+    public boolean isNotShowing() {
+        return this.screeningStatus != null && this.screeningStatus == Movie.ScreeningStatus.NOT_SHOWING;
+    }
+
+    public boolean isAllRating() {
+        return "ALL".equalsIgnoreCase(this.ageRating);
+    }
+
+    public boolean isAll() {
+        return "ALL".equals(this.ageRating);
+    }
+
+    public boolean is12() {
+        return "12".equals(this.ageRating);
+    }
+
+    public boolean is15() {
+        return "15".equals(this.ageRating);
+    }
+
+    public boolean is19() {
+        return "19".equals(this.ageRating);
+    }
+
 }
 
 // 목록 조회용 간소화된 DTO
@@ -51,4 +92,6 @@ class MovieListDto {
     private Integer reviewCount;
     private String mainImageUrl;
     private BigInteger audienceCount;
+    private String ageRating;  // 관람등급 추가
+    private Integer runningTime;  // 러닝타임 추가
 }

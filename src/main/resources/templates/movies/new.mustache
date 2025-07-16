@@ -1,84 +1,157 @@
 <div class="container">
     <h1>새 영화 등록</h1>
-
     {{#message}}
         <div class="alert alert-success">{{message}}</div>
     {{/message}}
-
-    <form action="/movies/new" method="post">
+    <form action="/movies/new" method="post" enctype="multipart/form-data">
         <div class="form-group">
-            <label for="title">제목 *</label>
+            <label for="title">제목*</label>
             <input type="text" id="title" name="title" required>
         </div>
-
+        <!-- content textarea 대신 스마트 에디터 적용 -->
         <div class="form-group">
             <label for="content">내용</label>
-            <textarea id="content" name="content" rows="5"></textarea>
+            <textarea name="content" id="ir1" rows="10" cols="100" style="width:100%; height:400px; display:none;"></textarea>
         </div>
-
         <div class="form-group">
             <label for="director">감독</label>
             <input type="text" id="director" name="director">
         </div>
-
         <div class="form-group">
             <label for="actors">배우</label>
             <input type="text" id="actors" name="actors" placeholder="배우 이름을 쉼표로 구분하여 입력하세요">
         </div>
-
         <div class="form-group">
             <label for="genre">장르</label>
             <input type="text" id="genre" name="genre">
         </div>
-
         <div class="form-group">
             <label for="releaseDate">개봉일</label>
             <input type="date" id="releaseDate" name="releaseDate">
         </div>
-
+        <!-- 상영 상태 필드 추가 -->
+        <div class="form-group">
+            <label for="screeningStatus">상영 상태</label>
+            <select id="screeningStatus" name="screeningStatus" class="form-control">
+                <option value="NOW_SHOWING">개봉중</option>
+                <option value="COMING_SOON">상영예정</option>
+                <option value="NOT_SHOWING" selected>상영안함</option>
+            </select>
+        </div>
         <div class="form-group">
             <label for="rating">평점</label>
             <input type="number" id="rating" name="rating" step="0.1" min="0" max="10">
         </div>
-
         <div class="form-group">
             <label for="reservationRate">예매율</label>
             <input type="number" id="reservationRate" name="reservationRate" step="0.1" min="0" max="100">
         </div>
 
         <div class="form-group">
-            <label for="mainImageUrl">메인 이미지 URL</label>
-            <input type="text" id="mainImageUrl" name="mainImageUrl">
+            <label for="ageRating">관람등급</label>
+            <select id="ageRating" name="ageRating" class="form-control">
+                <option value="ALL">전체관람가</option>
+                <option value="12">12세 이상</option>
+                <option value="15">15세 이상</option>
+                <option value="19">19세 이상</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="runningTime">러닝타임 (분)</label>
+            <input type="number" id="runningTime" name="runningTime" min="0" value="0">
         </div>
 
+        <!-- 이미지 업로드 필드 분리 -->
         <div class="form-group">
-            <label for="detailImageUrls">상세 이미지 URL</label>
-            <input type="text" id="detailImageUrls" name="detailImageUrls" placeholder="URL을 쉼표로 구분하여 입력하세요">
+            <label for="mainImageFile">메인 포스터 이미지</label>
+            <input type="file" id="mainImageFile" name="mainImageFile" accept="image/*">
+            <small class="form-text text-muted">영화의 메인 포스터 이미지를 선택하세요.</small>
+        </div>
+        <div class="form-group">
+            <label for="subImageFile">서브 이미지</label>
+            <input type="file" id="subImageFile" name="subImageFile" accept="image/*">
+            <small class="form-text text-muted">메인 포스터 외의 추가 이미지를 선택하세요.</small>
+        </div>
+        <div class="form-group">
+            <label for="detailImageFiles">상세 스틸컷 이미지 (여러 개 선택 가능)</label>
+            <input type="file" id="detailImageFiles" name="detailImageFiles" multiple accept="image/*">
+            <small class="form-text text-muted">영화의 상세 스틸컷 이미지를 선택하세요.</small>
         </div>
 
         <div class="form-group">
             <label for="videoUrl">동영상 URL</label>
             <input type="text" id="videoUrl" name="videoUrl">
         </div>
-
         <div class="form-group">
-            <label for="audienceCount">관객 수</label>
+            <label for="audienceCount">관객수</label>
             <input type="number" id="audienceCount" name="audienceCount" min="0">
         </div>
-
         <div class="form-group">
             <label for="likesCount">좋아요 수</label>
             <input type="number" id="likesCount" name="likesCount" min="0" value="0">
         </div>
-
         <div class="form-group">
             <label for="reviewCount">리뷰 수</label>
             <input type="number" id="reviewCount" name="reviewCount" min="0" value="0">
         </div>
-
         <div class="button-group">
             <button type="submit" class="btn btn-primary">등록하기</button>
             <a href="/movies" class="btn btn-secondary">취소</a>
         </div>
     </form>
 </div>
+
+<!-- 스마트 에디터 스크립트 -->
+<!-- 이 스크립트는 폼 태그가 끝나는 </body> 태그 바로 위에 위치하는 것이 좋습니다. -->
+<script type="text/javascript" src="/se2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+<script type="text/javascript">
+    var oEditors = [];
+    nhn.husky.EZCreator.createInIFrame({
+        oAppRef: oEditors,
+        elPlaceHolder: "ir1", // 에디터를 적용할 textarea의 ID
+        sSkinURI: "/se2/SmartEditor2Skin.html", // 에디터 스킨 파일 경로
+        htParams : {
+            bUseToolbar : true,             // 툴바 사용 여부 (true:사용/false:사용안함)
+            bUseVerticalResizer : true,     // 입력창 크기 조절바 사용 여부 (true:사용/false:사용안함)
+            bUseModeChanger : true,         // 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/false:사용안함)
+            fOnAppLoad : function(){
+                // 에디터 로딩 후 기존 내용 설정 (수정 모드 시)
+                // textarea에 이미 Mustache로 값이 채워져 있으므로, 그 값을 에디터로 로드
+                oEditors.getById["ir1"].exec("PASTE_HTML", [document.getElementById("ir1").value]);
+            },
+            fCreator: "createSEditor2"
+        },
+        fOnBeforeUnload : function(){
+            // 에디터 내용이 textarea에 적용될 때 (폼 제출 전)
+        }
+    });
+
+    // 폼 제출 전에 에디터의 내용을 textarea에 반영하는 함수
+    function submitContents(elEditor) {
+        // 에디터의 내용을 textarea에 적용
+        oEditors.getById[elEditor].exec("UPDATE_CONTENTS_FIELD", []);
+
+        // content 필드가 비어있는지 확인
+        var content = document.getElementById("ir1").value;
+        console.log("제출된 내용:", content); // 디버깅용 로그
+
+        // 빈 내용 체크 (스마트에디터는 빈 내용을 <p>&nbsp;</p> 등으로 표현할 수 있음)
+        if(!content || content == '<p>&nbsp;</p>' || content == '<p><br></p>') {
+            alert("내용을 입력해주세요.");
+            oEditors.getById[elEditor].exec("FOCUS");
+            return false;
+        }
+
+        return true;
+    }
+
+    // 폼에 id 추가하고 제출 이벤트 처리
+    document.addEventListener('DOMContentLoaded', function() {
+        var form = document.querySelector('form');
+        form.id = 'movieForm';
+
+        form.onsubmit = function() {
+            return submitContents("ir1");
+        };
+    });
+</script>

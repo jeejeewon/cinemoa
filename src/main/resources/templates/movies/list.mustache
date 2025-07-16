@@ -1,60 +1,323 @@
-<div class="container mt-4">
-    <h1>영화 목록</h1>
+<link rel="stylesheet" href="/css/movies.css" />
+{{> common/header }}
+<a href="/movies/new">등록하기</a>
+<a href="/movies?status=NOT_SHOWING">상영안함</a>
 
-    <div class="row">
-        {{#movies.content}}
-            <div class="col-md-4 mb-4">
-                <div class="card">
-                    {{#mainImageUrl}}
-                        <img src="/images/{{mainImageUrl}}" class="card-img-top" alt="{{title}}">
-                    {{/mainImageUrl}}
-                    {{^mainImageUrl}}
-                        <div class="card-img-top bg-light text-center py-5">이미지 없음</div>
-                    {{/mainImageUrl}}
-                    <div class="card-body">
-                        <h5 class="card-title">{{title}}</h5>
-                        <p class="card-text">
-                            <small>
-                                <span class="badge bg-primary">{{genre}}</span>
-                                {{#releaseDate}} {{releaseDate}} 개봉 {{/releaseDate}}
-                            </small>
-                        </p>
-                        <p class="card-text">
-                            <span class="text-warning">★</span> {{rating}} |
-                            예매율: {{reservationRate}}% |
-                            관객수: {{audienceCount}}명
-                        </p>
-                        <div class="d-flex justify-content-between">
-                            <span><i class="bi bi-heart-fill text-danger"></i> {{likesCount}}</span>
-                            <span><i class="bi bi-chat-fill text-primary"></i> {{reviewCount}}</span>
+<div class="container movies">
+    <div class="movie-chart">
+
+        <div class="tit">
+            <h1>무비차트</h1>
+            <div class="status-tab">
+                <a href="/movies" class="tab-item">무비차트</a>
+                <a href="/movies?status=COMING_SOON" class="tab-item">상영예정작</a>
+            </div>
+        </div>
+        <div class="sort">
+            <div class="onair-condition">
+                <div class="toggle-switch-wrapper">
+                    <input type="checkbox" name="onairToggle" class="mobileToggle" id="onairToggle">
+                    <label for="onairToggle"></label>
+                </div>
+                <p class="toggle-text">개봉작만</p>
+            </div>
+            <div class="input-wrap movie-search">
+                <input type="text" id="searchKeyword" title="영화 검색" placeholder="영화명, 감독명, 배우명 검색">
+                <button type="button" class="btn-search-input" id="btnSearch"><img width="20" height="20" src="https://img.icons8.com/ios-glyphs/20/search--v1.png" alt="search--v1"/></button>
+            </div>
+        </div>
+
+        <div class="movie-list">
+            {{#movies.content}}
+                <div class="item">
+                    <div class="item-wrap">
+
+                        {{#mainImageUrl}}
+                        <div class="main-image"><img src="/images/movie/{{mainImageUrl}}" alt="{{title}}"></div>
+                        {{/mainImageUrl}}
+                        {{^mainImageUrl}}
+                            <div class="main-image empty">>이미지 없음</div>
+                        {{/mainImageUrl}}
+                        <div class="item-tit">
+                            <p class="age">
+                                {{#ageRating}}
+                                    {{#isAll}}
+                                        <span class="movie-grade age-all"></span>
+                                    {{/isAll}}
+                                    {{#is12}}
+                                        <span class="movie-grade age-12"></span>
+                                    {{/is12}}
+                                    {{#is15}}
+                                        <span class="movie-grade age-15"></span>
+                                    {{/is15}}
+                                    {{#is19}}
+                                        <span class="movie-grade age-19"></span>
+                                    {{/is19}}
+                                {{/ageRating}}
+                            </p>
+                            <h5>{{title}}</h5>
                         </div>
-                        <a href="/movies/{{movieId}}" class="btn btn-outline-primary mt-2 w-100">상세보기</a>
+                        <div class="item-info">
+                            <span class="rate">예매율 <span class="rating">{{reservationRate}}</span>%</span>
+                            <span class="date">
+                                {{#releaseDate}}
+                                    개봉일 <span class="format-date">{{releaseDate}}</span>
+                                {{/releaseDate}}
+                                {{^releaseDate}}개봉일 미정{{/releaseDate}}
+                            </span>
+                        </div>
+                        <div class="item-btn">
+                            <div class="like-btn">
+                                <button class="heart-button">
+                                <svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" id="heart" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13.91,6.75c-1.17,2.25-4.3,5.31-6.07,6.94c-0.1903,0.1718-0.4797,0.1718-0.67,0C5.39,12.06,2.26,9,1.09,6.75&#xA;&#x9;C-1.48,1.8,5-1.5,7.5,3.45C10-1.5,16.48,1.8,13.91,6.75z" stroke="black"/>
+                                </svg>
+                                </button>
+                                <span class="likesCount">{{likesCount}}</span>
+                            </div>
+                            <a href="/ticketing/{{movieId}}" class="reservation-btn">예매하기</a>
+                        </div>
+                        <a href="/movies/{{movieId}}">상세보기</a>
                     </div>
                 </div>
-            </div>
-        {{/movies.content}}
+            {{/movies.content}}
+        </div>
     </div>
 
-    <!-- 페이지네이션 -->
-    <nav aria-label="Page navigation">
-        <ul class="pagination justify-content-center">
-            <li class="page-item {{^hasPrevious}}disabled{{/hasPrevious}}">
-                <a class="page-link" href="?page={{prevPage}}" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                </a>
-            </li>
-
-            {{#pageNumbers}}
-                <li class="page-item {{#active}}active{{/active}}">
-                    <a class="page-link" href="?page={{number}}">{{number}}</a>
-                </li>
-            {{/pageNumbers}}
-
-            <li class="page-item {{^hasNext}}disabled{{/hasNext}}">
-                <a class="page-link" href="?page={{nextPage}}" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
+    <div class="more-btn-wrap text-center">
+        {{#movies.hasNext}}
+            <button type="button" class="btn-more" id="btnLoadMore" data-next-page="{{nextPageNumber}}">더보기</button>
+        {{/movies.hasNext}}
+    </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 현재 URL 가져오기
+        const urlParams = new URLSearchParams(window.location.search);
+        const status = urlParams.get('status');
+
+        // sort 클래스 요소 선택
+        const sortElement = document.querySelector('.sort');
+
+        // status가 COMING_SOON인 경우 sort 클래스 숨기기
+        if (status === 'COMING_SOON') {
+            if (sortElement) {
+                sortElement.style.display = 'none';
+            }
+        } else {
+            if (sortElement) {
+                sortElement.style.display = 'flex'; // 또는 'block'
+            }
+        }
+
+        // 탭 활성화 코드
+        const tabItems = document.querySelectorAll('.tab-item');
+        tabItems.forEach(function(item) {
+        const itemUrl = item.getAttribute('href');
+
+        // '무비차트' 탭 활성화 로직 수정
+        if (itemUrl === '/movies') { // '무비차트' 탭인 경우
+            if (status === null || status === 'NOW_SHOWING') { // status 파라미터가 없거나 NOW_SHOWING일 때
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        } else { // '상영예정작' 탭인 경우
+            const itemStatus = new URLSearchParams(itemUrl.split('?')[1]).get('status');
+            if (status !== null && status === itemStatus) {
+                item.classList.add('active');
+            } else {
+                item.classList.remove('active');
+            }
+        }
+    });
+
+        // 온에어 토글 체크박스 코드 - 새로운 HTML 구조에 맞게 수정
+        const onairToggle = document.getElementById('onairToggle');
+        if (onairToggle) {
+            // 현재 상태에 따라 체크박스 상태 설정
+            if (status === 'NOW_SHOWING') {
+                onairToggle.checked = true;
+            } else {
+                onairToggle.checked = false;
+            }
+
+            // 체크박스 변경 이벤트 처리
+            onairToggle.addEventListener('change', function() {
+                if (this.checked) {
+                    window.location.href = '/movies?status=NOW_SHOWING';
+                } else {
+                    window.location.href = '/movies';
+                }
+            });
+        }
+
+        // 더보기 버튼 이벤트 처리
+        const btnLoadMore = document.getElementById('btnLoadMore');
+        if (btnLoadMore) {
+            btnLoadMore.addEventListener('click', function() {
+                const nextPage = this.getAttribute('data-next-page');
+                const movieListContainer = document.querySelector('.movie-list');
+
+                // 현재 URL에서 status 파라미터 가져오기
+                const currentStatus = urlParams.get('status');
+
+                // AJAX 요청 URL 구성
+                let url = `/movies/loadMore?page=${nextPage}`;
+                if (currentStatus) {
+                    url += `&status=${currentStatus}`;
+                }
+
+                // 로딩 표시
+                this.innerHTML = '로딩 중...';
+                this.disabled = true;
+
+                // AJAX 요청
+                fetch(url)
+                    .then(response => response.text())
+                    .then(html => {
+                        // 기존 영화 목록에 새로운 영화 추가
+                        const tempDiv = document.createElement('div');
+                        tempDiv.innerHTML = html;
+                        const newMovies = tempDiv.querySelectorAll('.item');
+
+                        newMovies.forEach(movie => {
+                            movieListContainer.appendChild(movie);
+                        });
+
+
+                        // 다음 페이지가 있는지 확인
+                        const hasNextPageElement = tempDiv.querySelector('[data-has-next]'); // data-has-next 속성을 가진 요소를 찾음
+                        const hasNextPage = hasNextPageElement ? hasNextPageElement.getAttribute('data-has-next') === 'true' : false; // 그 요소의 속성값이 'true'인지 확인
+
+                        if (hasNextPage) {
+                            // 다음 페이지 번호 업데이트
+                            this.setAttribute('data-next-page', parseInt(nextPage) + 1);
+                            this.innerHTML = '더보기';
+                            this.disabled = false;
+                        } else {
+                            // 더 이상 페이지가 없으면 버튼 제거
+                            this.parentNode.innerHTML = '';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('영화를 불러오는 중 오류가 발생했습니다:', error);
+                        this.innerHTML = '다시 시도';
+                        this.disabled = false;
+                    });
+            });
+        }
+
+        // 날짜 형식 변환 (yyyy-MM-dd -> yyyy.MM.dd)
+        const dateElements = document.querySelectorAll('.format-date');
+        dateElements.forEach(function(element) {
+            const originalDate = element.textContent;
+            if (originalDate) {
+                const parts = originalDate.split('-');
+                if (parts.length === 3) {
+                    element.textContent = parts.join('.');
+                }
+            }
+        });
+
+        // 검색 버튼 클릭 이벤트 처리
+        const btnSearch = document.getElementById('btnSearch');
+        const searchKeyword = document.getElementById('searchKeyword');
+
+        if (btnSearch && searchKeyword) {
+            // 검색 버튼 클릭 시
+            btnSearch.addEventListener('click', function() {
+                performSearch();
+            });
+
+            // 엔터키 입력 시
+            searchKeyword.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    performSearch();
+                }
+            });
+
+            // 검색 실행 함수
+            function performSearch() {
+                const keyword = searchKeyword.value.trim();
+                if (keyword) {
+                    // 현재 URL에서 status 파라미터 유지
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const status = urlParams.get('status');
+
+                    // 검색 URL 구성
+                    let searchUrl = '/movies/search?keyword=' + encodeURIComponent(keyword);
+                    if (status) {
+                        searchUrl += '&status=' + status;
+                    }
+
+                    // 페이지 이동
+                    window.location.href = searchUrl;
+                } else {
+                    alert('검색할 영화명을 입력하세요.');
+                }
+            }
+        }
+    });
+
+    // 'rating' 클래스를 가진 모든 요소를 찾아서 소수점 첫째 자리까지만 표시
+    const ratingElements = document.querySelectorAll('.rating');
+
+    ratingElements.forEach(function(element) {
+        const text = element.textContent;
+        const value = parseFloat(text);
+
+        if (!isNaN(value)) {
+          // 소수점 첫째 자리까지만 표시 (둘째 자리에서 버림)
+          const truncatedValue = Math.floor(value * 10) / 10;
+
+          // % 기호가 있는지 확인하여 유지
+          if (text.includes('%')) {
+            element.textContent = truncatedValue + '%';
+          } else {
+            element.textContent = truncatedValue;
+          }
+        }
+    });
+
+    let heartButtons = document.querySelectorAll(".heart-button");
+    heartButtons.forEach((button) => {
+        button.addEventListener("click", (event) => {
+            button.classList.toggle("active");
+        });
+    });
+
+  // 좋아요 개수를 표시하는 모든 span 요소
+  const likeCountElements = document.querySelectorAll('.likesCount');
+
+  likeCountElements.forEach(function(element) {
+    const count = parseInt(element.textContent);
+
+    if (!isNaN(count)) {
+      // 숫자 형식 변환 함수 호출
+      element.textContent = formatNumber(count);
+    }
+  });
+
+  // 숫자를 K, M, G, T 형식으로 변환하는 함수
+  function formatNumber(num) {
+    if (num < 1000) {
+      return num; // 1000 미만은 그대로 표시
+    } else if (num < 1000000) {
+      // 1K ~ 999K (천 단위)
+      return (Math.floor(num / 100) / 10) + 'K';
+    } else if (num < 1000000000) {
+      // 1M ~ 999M (백만 단위)
+      return (Math.floor(num / 100000) / 10) + 'M';
+    } else if (num < 1000000000000) {
+      // 1G ~ 999G (십억 단위)
+      return (Math.floor(num / 100000000) / 10) + 'G';
+    } else {
+      // 1T 이상 (조 단위)
+      return (Math.floor(num / 100000000000) / 10) + 'T';
+    }
+  }
+</script>
+
+{{> common/footer }}

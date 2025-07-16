@@ -9,7 +9,6 @@ public class MainController {
 
     @GetMapping("/")
     public String showMain(Model model) {
-        model.addAttribute("timestamp", System.currentTimeMillis());
         return "main/main"; // templates/main/main.mustache
     }
 

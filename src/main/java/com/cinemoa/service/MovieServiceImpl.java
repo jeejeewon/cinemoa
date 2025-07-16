@@ -77,6 +77,31 @@ public class MovieServiceImpl implements MovieService {
         movieRepository.deleteById(id);
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public Page<MovieDto> getMoviesByScreeningStatus(Movie.ScreeningStatus status, Pageable pageable) {
+        // 리포지토리에 이미 findByScreeningStatus 메서드가 있다면 페이징 처리를 위해 수정 필요
+        Page<Movie> moviePage = movieRepository.findByScreeningStatus(status, pageable);
+        return moviePage.map(this::convertToDto);
+    }
+
+    @Override
+    public Page<MovieDto> searchMoviesByKeyword(String keyword, Pageable pageable) {
+        // 제목, 감독, 배우만으로 키워드 검색
+        Page<Movie> moviePage = movieRepository.findByTitleContainingOrDirectorContainingOrActorsContaining(
+                keyword, keyword, keyword, pageable);
+        return moviePage.map(this::convertToDto);
+    }
+
+    @Override
+    public Page<MovieDto> searchMoviesByKeywordAndStatus(String keyword, Movie.ScreeningStatus status, Pageable pageable) {
+        // 키워드와 상영 상태로 검색
+        Page<Movie> moviePage = movieRepository.findByTitleContainingAndScreeningStatusOrDirectorContainingAndScreeningStatusOrActorsContainingAndScreeningStatus(
+                keyword, status, keyword, status, keyword, status, pageable);
+        return moviePage.map(this::convertToDto);
+    }
+
+
     // Entity -> DTO 변환
     private MovieDto convertToDto(Movie movie) {
         MovieDto movieDto = new MovieDto();
@@ -90,5 +115,6 @@ public class MovieServiceImpl implements MovieService {
         BeanUtils.copyProperties(movieDto, movie);
         return movie;
     }
+
 
 }

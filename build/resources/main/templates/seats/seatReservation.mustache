@@ -1,0 +1,282 @@
+<link rel="stylesheet" href="/css/seats/seatReservation.css?v={{ timestamp }}" />
+{{> common/header }}
+<div class="container reservation-wrapper">
+    <!-- 왼쪽: 좌석 선택 영역 -->
+    <div class="seat-selection">
+        <div class="title">
+            <h2>빠른예매</h2>
+            <button class="reset-btn"><img src="/images/icons/reset-icon.png">초기화</button>
+        </div>
+        <!-- 관람 인원 선택 -->
+        <div class="person-selection">
+            <div class="person-selection-inner">
+                <span>성인</span>
+                <div class="person-count">
+                    <button>-</button>
+                    <input type="text" value="0" readonly>
+                    <button>+</button>
+                </div>
+            </div>
+            <div class="person-selection-inner">
+                <span>청소년</span>
+                <div class="person-count">
+                    <button>-</button>
+                    <input type="text" value="0" readonly>
+                    <button>+</button>
+                </div>
+            </div>
+            <div class="person-selection-inner">
+                <span>경로</span>
+                <div class="person-count">
+                    <button>-</button>
+                    <input type="text" value="0" readonly>
+                    <button>+</button>
+                </div>
+            </div>
+            <div class="person-selection-inner">
+                <span>우대</span>
+                <div class="person-count">
+                    <button>-</button>
+                    <input type="text" value="0" readonly>
+                    <button>+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- 좌석 배치도 -->
+        <div class="seat-map">
+            <div class="screen-label">SCREEN</div>
+
+            <div class="seat-rows">
+                <!-- 좌석 행들 -->
+                <div class="row" data-row="A">
+                    <span class="row-label">A</span>
+                    <!-- 좌석들 -->
+                    <span class="seat">1</span>
+                    <span class="seat">2</span>
+                    <span class="seat">3</span>
+                    <span class="seat">4</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">5</span>
+                    <span class="seat">6</span>
+                    <span class="seat">7</span>
+                    <span class="seat">8</span>
+                    <span class="seat">9</span>
+                    <span class="seat">10</span>
+                    <span class="seat">11</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat vip">12</span>
+                    <span class="seat vip">13</span>
+                    <span class="seat vip">14</span>
+                    <span class="seat vip">15</span>
+                </div>
+                <!-- 좌석 행들 -->
+                <div class="row" data-row="B">
+                    <span class="row-label">B</span>
+                    <!-- 좌석들 -->
+                    <span class="seat">1</span>
+                    <span class="seat">2</span>
+                    <span class="seat">3</span>
+                    <span class="seat">4</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">5</span>
+                    <span class="seat">6</span>
+                    <span class="seat">7</span>
+                    <span class="seat">8</span>
+                    <span class="seat">9</span>
+                    <span class="seat">10</span>
+                    <span class="seat">11</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">12</span>
+                    <span class="seat">13</span>
+                    <span class="seat">14</span>
+                    <span class="seat">15</span>
+                </div>
+                <!-- 좌석 행들 -->
+                <div class="row" data-row="C">
+                    <span class="row-label">C</span>
+                    <!-- 좌석들 -->
+                    <span class="seat">1</span>
+                    <span class="seat">2</span>
+                    <span class="seat">3</span>
+                    <span class="seat">4</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">5</span>
+                    <span class="seat">6</span>
+                    <span class="seat">7</span>
+                    <span class="seat">8</span>
+                    <span class="seat">9</span>
+                    <span class="seat">10</span>
+                    <span class="seat">11</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">12</span>
+                    <span class="seat">13</span>
+                    <span class="seat">14</span>
+                    <span class="seat">15</span>
+                </div>
+                <!-- 좌석 행들 -->
+                <div class="row" data-row="D">
+                    <span class="row-label">D</span>
+                    <!-- 좌석들 -->
+                    <span class="seat">1</span>
+                    <span class="seat">2</span>
+                    <span class="seat">3</span>
+                    <span class="seat">4</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">5</span>
+                    <span class="seat">6</span>
+                    <span class="seat">7</span>
+                    <span class="seat">8</span>
+                    <span class="seat">9</span>
+                    <span class="seat">10</span>
+                    <span class="seat">11</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">12</span>
+                    <span class="seat">13</span>
+                    <span class="seat">14</span>
+                    <span class="seat">15</span>
+                </div>
+                <!-- 좌석 행들 -->
+                <div class="row" data-row="E">
+                    <span class="row-label">E</span>
+                    <!-- 좌석들 -->
+                    <span class="seat">1</span>
+                    <span class="seat">2</span>
+                    <span class="seat">3</span>
+                    <span class="seat">4</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">5</span>
+                    <span class="seat">6</span>
+                    <span class="seat">7</span>
+                    <span class="seat">8</span>
+                    <span class="seat">9</span>
+                    <span class="seat">10</span>
+                    <span class="seat">11</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">12</span>
+                    <span class="seat">13</span>
+                    <span class="seat">14</span>
+                    <span class="seat">15</span>
+                </div>
+                <!-- 좌석 행들 -->
+                <div class="row" data-row="F">
+                    <span class="row-label">F</span>
+                    <!-- 좌석들 -->
+                    <span class="seat">1</span>
+                    <span class="seat">2</span>
+                    <span class="seat">3</span>
+                    <span class="seat">4</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">5</span>
+                    <span class="seat">6</span>
+                    <span class="seat">7</span>
+                    <span class="seat">8</span>
+                    <span class="seat">9</span>
+                    <span class="seat">10</span>
+                    <span class="seat">11</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">12</span>
+                    <span class="seat">13</span>
+                    <span class="seat">14</span>
+                    <span class="seat">15</span>
+                </div>
+                <!-- 좌석 행들 -->
+                <div class="row" data-row="G">
+                    <span class="row-label">G</span>
+                    <!-- 좌석들 -->
+                    <span class="seat">1</span>
+                    <span class="seat">2</span>
+                    <span class="seat">3</span>
+                    <span class="seat">4</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">5</span>
+                    <span class="seat">6</span>
+                    <span class="seat">7</span>
+                    <span class="seat">8</span>
+                    <span class="seat">9</span>
+                    <span class="seat">10</span>
+                    <span class="seat">11</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">12</span>
+                    <span class="seat">13</span>
+                    <span class="seat">14</span>
+                    <span class="seat">15</span>
+                </div>
+                <!-- 좌석 행들 -->
+                <div class="row" data-row="H">
+                    <span class="row-label">H</span>
+                    <!-- 좌석들 -->
+                    <span class="seat">1</span>
+                    <span class="seat">2</span>
+                    <span class="seat">3</span>
+                    <span class="seat">4</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">5</span>
+                    <span class="seat">6</span>
+                    <span class="seat">7</span>
+                    <span class="seat">8</span>
+                    <span class="seat">9</span>
+                    <span class="seat">10</span>
+                    <span class="seat">11</span>
+                    <span class="seat-gap"></span><!-- 간격용 -->
+                    <span class="seat">12</span>
+                    <span class="seat">13</span>
+                    <span class="seat">14</span>
+                    <span class="seat">15</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 오른쪽: 예매 정보 영역 -->
+    <div class="reservation-summary">
+        <div class="movie-info">
+            <div class="movie-title">
+                <h3>F1 더 무비</h3>
+                <p>2D(자막)</p>
+            </div>
+            <div class="cinema-info">
+                <div class="cinema-info-left">
+                    <div>
+                        <p>서면대한<br>리클라이너 3관</p>
+                        <p>2025.07.14(월)</p>
+                    </div>
+
+                    <p>20:35 ~ 23:20</p>
+                </div>
+
+                <img src="/images/movie.jpg" alt="포스터" class="poster">
+            </div>
+        </div>
+
+        <div class="legend">
+            <ul>
+                <li><span class="box selected"></span>선택</li>
+                <li><span class="box reserved"></span>예매완료</li>
+                <li><span class="box disabled"></span>선택불가</li>
+                <li><span class="box normal"></span>일반</li>
+                <li><span class="box vip"></span>장애인석</li>
+            </ul>
+        </div>
+
+        <div class="selected-seats">
+            <h4>선택좌석</h4>
+            <ul>
+                <li>A5</li>
+                <li>B6</li>
+            </ul>
+        </div>
+
+        <div class="price-info">
+            <strong>최종결제금액</strong>
+            <p><span>0</span> 원</p>
+        </div>
+
+        <div class="navigation">
+            <button class="prev">이전</button>
+            <button class="next">다음</button>
+        </div>
+    </div>
+</div>
+<script src="/js/seats/seatReservation.js"></script>
+{{> common/footer }}

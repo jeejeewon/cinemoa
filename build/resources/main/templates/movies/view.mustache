@@ -1,95 +1,283 @@
-<div class="container mt-4">
-    <div class="row">
-        <div class="col-md-8 offset-md-2">
-            <div class="card mb-4">
+<link rel="stylesheet" href="/css/movie.css" />
+{{> common/header }}
+<div class="container movie">
+    <div class="content-wrap">
+        <div class="content">
+            <div class="movie-detail">
                 {{#movie}}
-                    <div class="card-header text-center">
-                        <h2>{{title}}</h2>
-                    </div>
-                    <div class="card-body">
-                        <div class="text-center mb-4">
+                    <div class="movie-info-wrap">
+                        <div class="poster">
                             {{#mainImageUrl}}
-                                <img src="/images/{{mainImageUrl}}" class="img-fluid rounded" alt="{{title}}" style="max-height: 400px; object-fit: cover;">
+                                <img src="/images/movie/{{mainImageUrl}}" class="img-fluid rounded" alt="{{title}}">
                             {{/mainImageUrl}}
                             {{^mainImageUrl}}
-                                <div class="bg-light text-center py-5 rounded" style="min-height: 200px;">이미지 없음</div>
+                                <div class="bg-light text-center py-5 rounded" >이미지 없음</div>
                             {{/mainImageUrl}}
                         </div>
+                        <div class="movie-info">
+                           <h2 class="tit">{{title}}</h2>
+                            <ul class="info1">
+                                <li>
+                                    <span class="date">
+                                        {{#releaseDate}}{{releaseDate}}개봉{{/releaseDate}}
+                                        {{^releaseDate}}미정{{/releaseDate}}
+                                    </span>
+                                </li>
+                                <li><span class="time">{{runningTime}}</span>분</li>
+                                <li>{{ageRating}}</li>
+                            </ul>
+                            <div class="info2">
+                                <p>감독: {{director}}</p>
+                                <p>배우: {{actors}}</p>
+                                <p>장르: {{genre}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="movie-cont-wrap">
 
-                        <p class="card-text">
-                            <strong>감독:</strong> {{director}} <br>
-                            <strong>배우:</strong> {{actors}} <br>
-                            <strong>장르:</strong> <span class="badge bg-secondary">{{genre}}</span> <br>
-                            <strong>개봉일:</strong> {{releaseDate}}
-                        </p>
+                        <ul class="tab">
+                            <li>상세정보</li>
+                            <li>관람평</li>
+                            <li>예고편/스틸컷</li>
+                        </ul>
 
-                        <hr>
-
-                        <h4>줄거리</h4>
-                        <p class="card-text">{{content}}</p>
-
-                        <hr>
-
-                        <div class="row text-center">
-                            <div class="col-md-4">
+                        <p class="movie-cont">{{{content}}}</p>
+                        <div class="score">
+                            <div class="rate">
                                 <h5><span class="text-warning">★</span> 평점</h5>
-                                <p class="h4">{{rating}}</p>
+                                <p><span class="rating">{{rating}}</span>%</p>
                             </div>
-                            <div class="col-md-4">
+                            <div class="reservation">
                                 <h5>예매율</h5>
-                                <p class="h4">{{reservationRate}}%</p>
+                                <p><span class="rating">{{reservationRate}}</span>%</p>
                             </div>
-                            <div class="col-md-4">
-                                <h5>관객 수</h5>
-                                <p class="h4">{{audienceCount}}명</p>
+                            <div class="audience">
+                                <h5>관객수</h5>
+                                <p>{{audienceCount}}명</p>
                             </div>
                         </div>
-
                         <hr>
-
-                        <div class="row text-center">
-                            <div class="col-6">
-                                <h5><i class="bi bi-heart-fill text-danger"></i> 좋아요</h5>
-                                <p class="h4">{{likesCount}}</p>
+                        <div class="">
+                            <div class="like">
+                                <h5>좋아요</h5>
+                                <p>{{likesCount}}</p>
                             </div>
-                            <div class="col-6">
-                                <h5><i class="bi bi-chat-fill text-primary"></i> 리뷰</h5>
-                                <p class="h4">{{reviewCount}}</p>
+                            <div class="review">
+                                <h5>리뷰</h5>
+                                <p>{{reviewCount}}</p>
                             </div>
                         </div>
 
-                        {{#movie}}
-                            {{#videoUrl}}
-                                <hr>
-                                <h4>예고편</h4>
-                                <div class="embed-responsive embed-responsive-16by9 mb-3">
-                                    <iframe class="embed-responsive-item" src="{{videoUrl}}" allowfullscreen></iframe>
+                        {{#videoUrl}}
+                            <hr>
+                            <h4>예고편</h4>
+                            <div class="embed-responsive embed-responsive-16by9 mb-3">
+                                <iframe class="embed-responsive-item" src="{{videoUrl}}" allowfullscreen
+                                        style="width:100%; height:400px;"></iframe>
+                            </div>
+                        {{/videoUrl}}
+
+                        {{#subImageUrls}}
+                            <hr>
+                            <h4>서브 이미지</h4>
+                            <div class="detail-images-gallery">
+                                <div class="detail-image-item mb-3">
+                                    <img src="/images/movie/{{subImageUrls}}" class="img-fluid rounded" alt="서브 이미지">
                                 </div>
-                            {{/videoUrl}}
-                        {{/movie}}
+                            </div>
+                        {{/subImageUrls}}
 
                         {{#detailImageUrls}}
                             <hr>
                             <h4>상세 이미지</h4>
-                            <div class="row">
-                                <div class="col-12">
-                                    <p>{{detailImageUrls}}</p>
-                                </div>
+                            <div class="detail-images-gallery">
+                                {{#detailImageUrlList}}
+                                    <div class="detail-image-item mb-3">
+                                        <img src="/images/movie/{{.}}" class="img-fluid rounded" alt="상세 이미지">
+                                    </div>
+                                {{/detailImageUrlList}}
                             </div>
                         {{/detailImageUrls}}
 
                         <hr>
-                        <p class="text-muted text-end">
-                            등록일: {{createdAt}}<br>
-                            수정일: {{updatedAt}}
-                        </p>
+                        등록일: <span class="format-date">{{createdAt}}</span><br>
+                        수정일: <span class="format-date">{{updatedAt}}</span>
                     </div>
                     <div class="card-footer text-center">
                         <a href="/movies/{{movieId}}/edit" class="btn btn-primary me-2">수정하기</a>
+                        <button type="button" class="btn btn-danger me-2" onclick="deleteMovie({{movieId}})">삭제하기
+                        </button>
                         <a href="/movies" class="btn btn-secondary">목록으로 돌아가기</a>
                     </div>
                 {{/movie}}
             </div>
         </div>
     </div>
+    <!-- 평점 표시 부분 추가 -->
+    <hr>
+    <h4>관람객 평점</h4>
+    <div class="row text-center">
+        <div class="col-md-6">
+            <div class="progress" style="height: 30px;">
+                <div class="progress-bar bg-success" role="progressbar" style="width: {{positivePercentage}}%;"
+                     aria-valuenow="{{positivePercentage}}" aria-valuemin="0" aria-valuemax="100">
+                    {{positivePercentage}}%
+                </div>
+            </div>
+            <p class="mt-2"><span class="rating">{{positivePercentage}}</span>%의 관람객이 이 영화를 좋아했습니다.</p>
+        </div>
+        <div class="col-md-6">
+            <!-- 리뷰 작성 버튼 모달 트리거로 변경 -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#reviewModal" data-movie-id="{{movieId}}">
+                리뷰 작성하기
+            </button>
+        </div>
+    </div>
+
+    <!-- 리뷰 목록 표시 부분 추가 -->
+    <hr>
+    <h4>관람객 리뷰 ({{reviews.size}})</h4>
+    {{#reviews}}
+        <div class="card mb-3">
+            <div class="card-body">
+                <div class="d-flex justify-content-between">
+                    <h5 class="card-title">
+                        {{#isPositive}}
+                            <span class="badge bg-success"><i class="bi bi-hand-thumbs-up"></i> 좋았어요</span>
+                        {{/isPositive}}
+                        {{^isPositive}}
+                            <span class="badge bg-danger"><i class="bi bi-hand-thumbs-down"></i> 별로였어요</span>
+                        {{/isPositive}}
+                    </h5>
+                    <small class="text-muted format-date">{{createdAt}}</small>
+                </div>
+                <p class="card-text">{{{content}}}</p>
+                <div class="d-flex justify-content-end">
+                    <a href="/reviews/delete/{{reviewId}}?movieId={{movieId}}" class="btn btn-sm btn-outline-danger"
+                    onclick="return confirm('정말로 이 리뷰를 삭제하시겠습니까?');">삭제</a>
+                </div>
+            </div>
+        </div>
+    {{/reviews}}
+    {{^reviews}}
+        <div class="alert alert-info">
+            아직 등록된 리뷰가 없습니다. 첫 번째 리뷰를 작성해보세요!
+        </div>
+    {{/reviews}}
 </div>
+
+<!-- 리뷰 작성 모달 -->
+<div class="modal fade" id="reviewModal" tabindex="-1" aria-labelledby="reviewModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="reviewModalLabel">리뷰 작성</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+            </div>
+            <div class="modal-body" id="reviewFormContainer">
+                <!-- 리뷰 폼 내용이 여기에 로드됩니다 -->
+                리뷰 폼 여기 나옴
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS 및 모달 로딩 스크립트 -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var reviewModal = document.getElementById('reviewModal');
+        reviewModal.addEventListener('show.bs.modal', function (event) {
+            var button = event.relatedTarget; // 모달을 트리거한 버튼
+            var movieId = button.getAttribute('data-movie-id'); // data-movie-id 속성에서 영화 ID 추출
+            var reviewFormContainer = document.getElementById('reviewFormContainer');
+
+            // AJAX 요청으로 폼 내용 불러오기
+            fetch(`/reviews/new-fragment?movieId=${movieId}`) // 새로운 엔드포인트 호출
+                .then(response => response.text())
+                .then(html => {
+                    reviewFormContainer.innerHTML = html;
+                    // 만약 리뷰 폼에 스마트 에디터가 적용되어 있다면, 여기서 에디터를 다시 초기화하는 코드가 필요합니다.
+                    // 예: if (typeof nhn !== 'undefined') { nhn.husky.EZCreator.createInIFrame(...) }
+                })
+                .catch(error => {
+                    console.error('리뷰 폼을 불러오는데 실패했습니다:', error);
+                    reviewFormContainer.innerHTML = '<p class="text-danger">리뷰 폼을 불러오는데 실패했습니다.</p>';
+                });
+        });
+
+        // 모달이 닫힐 때 내용 초기화 (선택 사항)
+        reviewModal.addEventListener('hidden.bs.modal', function () {
+            document.getElementById('reviewFormContainer').innerHTML = '로딩 중...';
+        });
+    });
+</script>
+
+<script>
+    function deleteMovie(movieId) {
+        // 사용자에게 삭제 여부 확인
+        if (confirm('정말로 이 영화를 삭제하시겠습니까?')) {
+            // fetch API를 사용하여 DELETE 요청 전송
+            fetch(`/api/movies/${movieId}`, {
+                method: 'DELETE'
+            })
+            .then(response => {
+                if (response.ok) { // HTTP 상태 코드가 200-299 범위인 경우 (성공)
+                    alert('영화를 성공적으로 삭제했습니다.');
+                    window.location.href = '/movies'; // 영화 목록 페이지로 리다이렉트
+                } else {
+                    // 오류 응답 처리
+                    alert('영화 삭제에 실패했습니다. 다시 시도해주세요.');
+                    console.error('삭제 실패:', response.status, response.statusText);
+                }
+            })
+            .catch(error => {
+                // 네트워크 오류 등 예외 처리
+                alert('영화 삭제 중 오류가 발생했습니다.');
+                console.error('삭제 중 오류 발생:', error);
+            });
+        }
+    }
+
+    // 'rating' 클래스를 가진 모든 요소를 찾아서 소수점 첫째 자리까지만 표시
+    const ratingElements = document.querySelectorAll('.rating');
+
+    ratingElements.forEach(function(element) {
+        const text = element.textContent;
+        const value = parseFloat(text);
+
+        if (!isNaN(value)) {
+          // 소수점 첫째 자리까지만 표시 (둘째 자리에서 버림)
+          const truncatedValue = Math.floor(value * 10) / 10;
+
+          // % 기호가 있는지 확인하여 유지
+          if (text.includes('%')) {
+            element.textContent = truncatedValue + '%';
+          } else {
+            element.textContent = truncatedValue;
+          }
+        }
+    });
+
+    // 날짜 형식을 변환하는 함수
+    function formatDate(dateString) {
+        if (!dateString) return '';
+
+        // ISO 형식의 날짜 문자열에서 'T'를 기준으로 분할하여 날짜 부분만 추출
+        const datePart = dateString.split('T')[0];
+        return datePart;
+        }
+
+        // .format-date 클래스를 가진 모든 요소 찾기
+        const dateElements = document.querySelectorAll('.format-date');
+
+        // 각 요소의 텍스트 내용을 변환
+        dateElements.forEach(function(element) {
+        const originalDate = element.textContent;
+        if (originalDate && originalDate.trim() !== '') {
+          element.textContent = formatDate(originalDate);
+        }
+    });
+</script>
+
+{{> common/footer }}
