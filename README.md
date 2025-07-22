@@ -54,58 +54,20 @@ Spring Boot 기반으로 개발 중인 영화 예매 플랫폼입니다.
 
 ---
 
-## 📝 담당 업무 (윤지원)
+## 📝 담당 업무 (이지원)
 
-### 🖥 UI / 레이아웃
-- 헤더, 푸터 디자인 및 레이아웃 구조 설계 (HTML, CSS, JS 포함)  
-  <img width="947" height="145" alt="헤더" src="https://github.com/user-attachments/assets/1fbb09db-6f64-41d0-a025-6ee824f6a0fd" />  
-  
-- 메뉴 내 JS 기능 적용  
-  <img width="949" height="63" alt="헤더2" src="https://github.com/user-attachments/assets/a93397cc-a28c-42f0-b421-227a4ef887a5" />
-  
-- 스크롤 탑 기능 구현  
-  <img width="223" height="89" alt="스크롤탑고정버튼" src="https://github.com/user-attachments/assets/23048f2d-ebdf-44e3-83db-f93087ddfefd" />  
-
+### 영화 관련 기능
+- 영화 등록, 수정, 삭제 등 관리
+- 상영상태 반영
 ---
 
-### 🔑 인증 및 회원 관리
-- 로그인 / 로그아웃 기능 및 비회원 로그인 구현  
-  <img width="414" height="635" alt="비회원로그인" src="https://github.com/user-attachments/assets/9412d621-0549-46e1-a648-0a452372ba75" />
-  <img width="455" height="517" alt="로그인" src="https://github.com/user-attachments/assets/dcf4c20a-8b7d-40d3-b6fb-33d186e60cec" />
-  
-- 회원가입 기능 구현  
-  - 이메일 인증 기능 포함  
-  <img width="582" height="460" alt="회원가입_이메일인증" src="https://github.com/user-attachments/assets/e58e9f33-378c-4a01-a699-16e0e345bc42" />  
-  <img width="760" height="592" alt="인증번호" src="https://github.com/user-attachments/assets/9edea297-d096-43d7-9523-18e6fc972c59" />  
-
-  - 기존 DB와 중복 아이디 확인 기능  
-  <img width="591" height="738" alt="회원정보입력페이지2" src="https://github.com/user-attachments/assets/f497e037-1776-41f6-8e46-d7c2e42a830b" />
-
+### 예매 관련 기능
+- 예매율 적용 후 순위 출력
+- 영화 예매 페이지 작업중
 ---
 
-### 🎟 예매 관련
-- 예매 시 좌석 선택 페이지 개발  
-  <img width="1186" height="920" alt="좌석선택페이지" src="https://github.com/user-attachments/assets/98f751e2-028d-436c-91d5-3d551510c830" />
-
-- 결제 시스템 개발 (진행 중)  
-
+### 좋아요 기능
 ---
 
-### 👤 마이페이지  
-<img width="1194" height="916" alt="마이페이지홈" src="https://github.com/user-attachments/assets/fc695730-6af9-44ec-89ee-d50be7bea648" />
-
-- 예매 내역 및 영화 내역 리스트 출력  
-  <img width="1192" height="845" alt="예매내역" src="https://github.com/user-attachments/assets/64e0c13b-27f3-4879-9407-d67ec2836341" />
-
-- 회원 정보 관리 (프로필 수정, 개인정보 수정, 선호 관람 정보 설정, 회원 탈퇴)  
-  <img width="794" height="721" alt="프로필수정팝업" src="https://github.com/user-attachments/assets/03d35120-5cf6-4848-82bd-69d151a4e500" />
-  <img width="1174" height="909" alt="회원탈퇴" src="https://github.com/user-attachments/assets/341c3ead-936b-4b55-9978-c2e08e9beff7" />
-
----
-
-### 📝 고객센터
-- 1:1 문의 구현  
-- 공지사항, 자주 묻는 질문은 추후 구현 예정  
-  <img width="1177" height="887" alt="고객센터문의하" src="https://github.com/user-attachments/assets/e9eb7a8d-a4a0-4f89-97ce-0b25c0978b2a" />
-
+### 댓글 및 평점 기능
 ---
