@@ -13,9 +13,9 @@
                     <li>
                         <a href="/mypage/mymovie">나의 영화</a>
                         <ul class="mypage-menu-ul-sub">
-                            <li><a href="/mypage/mymovie/mymovie">내가 본 영화</a></li>
-                            <li><a href="/mypage/mymovie/myreview">내가 쓴 관람평</a></li>
-                            <li><a href="/mypage/mymovie/mylike">좋아요 한 영화</a></li>
+                            <li><a href="/mypage/mymovie">내가 본 영화</a></li>
+                            <li><a href="/mypage/myreview">내가 쓴 관람평</a></li>
+                            <li><a href="/mypage/mylike">좋아요 한 영화</a></li>
                         </ul>
                     </li>
                     <li>
@@ -37,12 +37,29 @@
             {{#bookinglist}}
                 {{> mypage/bookinglist }}
             {{/bookinglist}}
+            {{#bookingdetail}}
+                {{> mypage/bookingdetail }}
+            {{/bookingdetail}}
             {{#mymovie}}
                 {{> mypage/mymovie }}
             {{/mymovie}}
+            {{#myreview}}
+                {{> mypage/myreview }}
+            {{/myreview}}
+            {{#mylike}}
+                {{> mypage/mylike }}
+            {{/mylike}}
             {{#myinfo}}
                 {{> mypage/myinfo }}
             {{/myinfo}}
+            {{#myinfoPasswordCheck}}
+                {{> mypage/myinfoPasswordCheck}}
+            {{/myinfoPasswordCheck}}
+
+            {{#myinfoEdit}}
+                {{> mypage/myinfoEdit}}
+            {{/myinfoEdit}}
+
             {{#pref}}
                 {{> mypage/pref }}
             {{/pref}}

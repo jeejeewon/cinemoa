@@ -123,6 +123,7 @@ document.addEventListener("DOMContentLoaded", function () {
     loadingImg.src = '/images/icons/loading.gif';
     loadingImg.alt = 'loading';
     loadingImg.style.width = '18px';
+    loadingImg.style.height = '18px';
     loadingImg.style.verticalAlign = 'middle';
     loadingImg.style.marginLeft = '10px';
     loadingImg.classList.add('loading-icon');

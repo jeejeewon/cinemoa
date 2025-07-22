@@ -2,6 +2,9 @@
 * {
   box-sizing: border-box;
 }
+*::placeholder{
+  color: #999;
+}
 html, body, div, span, p, a, button, td, th, li, h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
 }
@@ -57,7 +60,7 @@ a {
 html {
   overflow-x: hidden;
 }
-body {
+body, button, textarea {
   color: #333;
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
     Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", sans-serif;

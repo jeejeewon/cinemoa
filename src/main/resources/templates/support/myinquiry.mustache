@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="/css/support/myinquiry.css?v={{ timestamp }}" />
+
+<div class="inquiry-container">
+    <div class="title-area">
+        <h2 class="section-title">나의 문의 내역</h2>
+    </div>
+
+    {{^myInquiries}}
+        <p class="no-inquiry">등록된 문의 내역이 없습니다.</p>
+    {{/myInquiries}}
+
+        <table class="inquiry-table">
+            <thead>
+            <tr>
+                <th>번호</th>
+                <th>제목</th>
+                <th>등록일</th>
+                <th>답변 상태</th>
+            </tr>
+            </thead>
+            <tbody>
+            {{#myInquiries}}
+                <tr class="tr-style">
+                    <td>{{inquiryId}}</td>
+                    <td>
+                        <a href="/support/inquiry/{{inquiryId}}" class="inquiry-link">{{title}}</a>
+                    </td>
+                    <td>{{regDate}}</td>
+                    <td>
+                        {{#replyContent}}<span class="answered">답변 완료</span>{{/replyContent}}
+                        {{^replyContent}}<span class="waiting">답변 대기</span>{{/replyContent}}
+                    </td>
+                </tr>
+            {{/myInquiries}}
+            </tbody>
+        </table>
+</div>

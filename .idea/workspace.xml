@@ -4,389 +4,169 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5e69bfea-3231-44b6-87cd-dffb1dc2379d" name="Changes" comment="db연결 변경">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-07-16__2_53__Changes_.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-07-16_오후_2_53_[Changes]/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2025-07-16_오후_2_53_[Changes]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/api/MemberApiController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/api/ReviewApiController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/config/GlobalModelAttributeAdvice.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/config/WebConfig.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/EmailController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MemberController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MypageController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/ReviewController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/SeatsController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/TicketingController.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/InquiryDto$InquiryDtoBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/InquiryDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/MemberDto$MemberDtoBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/MemberDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/ReservationDto$ReservationDtoBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/ReservationDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/ReviewDto$ReviewDtoBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/ReviewDto.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Cinema$CinemaBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Cinema.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Member$MemberBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Member.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Movie$ScreeningStatus.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Reservation$ReservationBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Reservation.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Review$ReviewBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Review.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Screen$ScreenBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Screen.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Showtime$ShowtimeBuilder.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Showtime.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/interceptor/LoginCheckInterceptor.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/repository/CinemaRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/repository/MemberRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/repository/ReviewRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/repository/ScreenRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/repository/ShowtimeRepository.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/CinemaService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/EmailService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/MemberService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/ReviewService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/ScreenService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/ScreenServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/ShowtimeService.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/ShowtimeServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/impl/ReviewServiceImpl.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/css/member/find.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/css/member/join.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/css/member/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/css/movies.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/css/mypage/mypage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/css/mypage/mypageHome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/css/mypage/pref.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/css/seats/seatReservation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/css/ticketing.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/arrow-down.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/default-profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/email-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/favorite-movie-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/free-icon-question-10138222.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/free-icon-question-1621848.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/headset-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/home-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/login-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/logout-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/reset-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/review-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/user-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/user-plus-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/icons/videocamera-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/movie/12_46x46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/movie/15_46x46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/movie/19_46x46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/movie/32b0bf79-856c-4d42-aa66-b2dfdcb8a883.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/movie/6af3c5a4-ba5b-473c-9bc4-01116465da25.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/movie/ALL_46x46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/movie/a95a4682-85ec-44ca-8700-35aa8b73c563.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/images/movie/f83e7b99-355b-4b72-9dd5-9d25732cd65f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/js/member/find.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/js/member/joinStep1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/js/mypage/pref.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/js/seats/seatReservation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/SmartEditor2Skin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/en_US/smart_editor2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/en_US/smart_editor2_in.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/en_US/smart_editor2_items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/en_US/smart_editor2_out.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/ja_JP/smart_editor2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/ja_JP/smart_editor2_in.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/ja_JP/smart_editor2_items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/ja_JP/smart_editor2_out.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/ko_KR/smart_editor2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/ko_KR/smart_editor2_in.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/ko_KR/smart_editor2_items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/ko_KR/smart_editor2_out.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/zh_CN/smart_editor2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/zh_CN/smart_editor2_in.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/zh_CN/smart_editor2_items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/zh_CN/smart_editor2_out.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/zh_TW/smart_editor2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/zh_TW/smart_editor2_in.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/zh_TW/smart_editor2_items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/css/zh_TW/smart_editor2_out.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bg_b1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bg_button.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bg_button_left.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bg_button_right.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bg_find_h3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bg_help.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bg_line1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bg_quote2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bg_set.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bg_spell.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bg_text_tool.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/bx_set_110302.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/en_US/btn_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/en_US/text_tool_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/ico_extend.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/icon_set.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/ja_JP/btn_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/ja_JP/text_tool_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/ko_KR/btn_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/ko_KR/text_tool_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/zh_CN/btn_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/zh_CN/text_tool_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/zh_TW/btn_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/img/zh_TW/text_tool_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/js/bundle/base.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/js/bundle/extra.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/js/bundle/husky-range.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/js/bundle/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/js/bundle/lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/js/lib/jindo2.all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/js/lib/jindo_component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/js/service/HuskyEZCreator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/js/service/SE2BasicCreator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/js/service/SE2M_Configuration.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/js/smarteditor2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/smart_editor2_inputarea.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/static/se2/smart_editor2_inputarea_ie8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/common/fixedBtn.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/fragments/movieList.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/member/find.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/member/join.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/member/joinStep1.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/member/joinStep2.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/member/joinStep3.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/member/joinStep4.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/member/login.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/movies/movie-items-partial.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/bookinglist.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/myinfo.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/myinquiry.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/mymovie.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/mypageHome.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/mypageLayout.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/pref.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/withdrawal.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/reviews/new.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/seats/seatReservation.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/ticketing/seat-selection.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/templates/ticketing/ticketing.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/ReviewController.class.uniqueId0" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/api/MemberApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/api/ReviewApiController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/config/GlobalModelAttributeAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/EmailController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/MypageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/ReviewController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/SeatsController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/TicketingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/InquiryDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/ReservationDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/ReviewDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Cinema.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Reservation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Review.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Screen.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Showtime.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/interceptor/LoginCheckInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/CinemaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/ReviewRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/ScreenRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/ShowtimeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/CinemaService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/EmailService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/ReviewService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/ReviewServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/ScreenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/ScreenServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/ShowtimeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/ShowtimeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/member/find.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/member/join.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/member/login.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/movies.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/mypage/mypage.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/mypage/mypageHome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/mypage/pref.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/seats/seatReservation.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/ticketing.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/arrow-down.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/default-profile.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/email-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/favicon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/favorite-movie-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/free-icon-question-10138222.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/free-icon-question-1621848.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/headset-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/home-icon.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/loading.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/login-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/logout-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/reset-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/review-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/user-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/user-plus-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/videocamera-icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/movie/12_46x46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/movie/15_46x46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/movie/19_46x46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/movie/32b0bf79-856c-4d42-aa66-b2dfdcb8a883.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/movie/6af3c5a4-ba5b-473c-9bc4-01116465da25.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/movie/ALL_46x46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/movie/a95a4682-85ec-44ca-8700-35aa8b73c563.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/movie/f83e7b99-355b-4b72-9dd5-9d25732cd65f.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/member/find.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/member/joinStep1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/mypage/pref.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/seats/seatReservation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/SmartEditor2Skin.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/en_US/smart_editor2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/en_US/smart_editor2_in.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/en_US/smart_editor2_items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/en_US/smart_editor2_out.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/ja_JP/smart_editor2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/ja_JP/smart_editor2_in.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/ja_JP/smart_editor2_items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/ja_JP/smart_editor2_out.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/ko_KR/smart_editor2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/ko_KR/smart_editor2_in.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/ko_KR/smart_editor2_items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/ko_KR/smart_editor2_out.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/zh_CN/smart_editor2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/zh_CN/smart_editor2_in.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/zh_CN/smart_editor2_items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/zh_CN/smart_editor2_out.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/zh_TW/smart_editor2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/zh_TW/smart_editor2_in.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/zh_TW/smart_editor2_items.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/css/zh_TW/smart_editor2_out.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bg_b1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bg_button.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bg_button_left.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bg_button_right.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bg_find_h3.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bg_help.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bg_line1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bg_quote2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bg_set.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bg_spell.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bg_text_tool.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/bx_set_110302.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/en_US/btn_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/en_US/text_tool_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/ico_extend.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/icon_set.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/ja_JP/btn_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/ja_JP/text_tool_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/ko_KR/btn_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/ko_KR/text_tool_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/zh_CN/btn_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/zh_CN/text_tool_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/zh_TW/btn_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/img/zh_TW/text_tool_set.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/js/bundle/base.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/js/bundle/extra.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/js/bundle/husky-range.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/js/bundle/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/js/bundle/lazy.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/js/lib/jindo2.all.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/js/lib/jindo_component.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/js/service/HuskyEZCreator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/js/service/SE2BasicCreator.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/js/service/SE2M_Configuration.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/js/smarteditor2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/smart_editor2_inputarea.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/static/se2/smart_editor2_inputarea_ie8.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/common/fixedBtn.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/fragments/movieList.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member/find.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member/joinStep1.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member/joinStep2.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member/joinStep3.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member/joinStep4.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member/login.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/movies/movie-items-partial.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/bookinglist.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/myinfo.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/myinquiry.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/mymovie.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/mypageHome.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/mypageLayout.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/pref.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/withdrawal.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/reviews/new.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/seats/seatReservation.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/ticketing/seat-selection.mustache" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/ticketing/ticketing.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/checksums/checksums.lock" afterDir="false" />
+    <list default="true" id="5e69bfea-3231-44b6-87cd-dffb1dc2379d" name="Changes" comment="고객센터-문의하기로직">
+      <change afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/material_theme_project_new.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/cinemoa.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/config/ProfileImageInitializer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/GuestUserController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/PaymentComtroller.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/SupportController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/GuestUserDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/ReservationDetailDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/SeatDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/WatchedMovieDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/GuestUser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Inquiry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Payment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/ReservationSeat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Seat.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/GuestUserRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/InquiryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/PaymentRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/ReservationRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/ReservationSeatRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/SeatRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/GuestUserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/InquiryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/member/guestLogin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/mypage/bookingdetail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/mypage/bookinglist.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/mypage/mymovieAndmyreview.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/mypage/profileEditPopup.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/mypage/withdrawal.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/mypage/withdrawalSuccess.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/payment.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/support/inquiryForm.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/support/myinquiry.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/css/support/support.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/angle-left-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/angle-right-icon.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/icons/ticket-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/images/profile/default-profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/member/guestLogin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/mypage/mypageHome.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/mypage/profileEditPopup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/mypage/withdrawal.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/js/support/inquiryForm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/member/guestLogin.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/bookingdetail.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/myinfoEdit.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/myinfoPasswordCheck.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/mylike.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/myreview.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/profileEditPopup.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/withdrawalSuccess.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/payment/payment.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/support/faqList.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/support/inquiryDetail.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/support/inquiryForm.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/support/myinquiry.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/support/noticeDetail.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/support/noticeList.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/support/supportHome.mustache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/support/supportLayout.mustache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/api/MovieApiController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/api/MovieApiController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MainController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MovieController$PageItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MovieController$PageItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MovieController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MovieController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/MovieDto$MovieDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/MovieDto$MovieDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/MovieDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/MovieDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/MovieListDto$MovieListDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/MovieListDto$MovieListDtoBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/MovieListDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/MovieListDto.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Movie$MovieBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Movie$MovieBuilder.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Movie.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Movie.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/repository/MovieRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/repository/MovieRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/MovieService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/MovieService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/MovieServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/MovieServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/config/GlobalModelAttributeAdvice.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/config/GlobalModelAttributeAdvice.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/config/WebConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/config/WebConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MemberController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MemberController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MypageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/MypageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/SeatsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/SeatsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/TicketingController.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/controller/TicketingController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/InquiryDto$InquiryDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/InquiryDto$InquiryDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/InquiryDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/InquiryDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/ReservationDto$ReservationDtoBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/ReservationDto$ReservationDtoBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/ReservationDto.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/dto/ReservationDto.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Member$MemberBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Member$MemberBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Member.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Member.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Reservation$ReservationBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Reservation$ReservationBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Reservation.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Reservation.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Review$ReviewBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Review$ReviewBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Review.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Review.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Screen$ScreenBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Screen$ScreenBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Screen.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Screen.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Showtime$ShowtimeBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Showtime$ShowtimeBuilder.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Showtime.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/entity/Showtime.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/interceptor/LoginCheckInterceptor.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/interceptor/LoginCheckInterceptor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/repository/MemberRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/repository/MemberRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/repository/ReviewRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/repository/ReviewRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/MemberService.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/cinemoa/service/MemberService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/problems/problems-report.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/problems/problems-report.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/member/find.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/member/find.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/mypage/mypageHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/mypage/mypageHome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/mypage/pref.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/mypage/pref.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/css/seats/seatReservation.css" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/css/seats/seatReservation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/member/find.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/member/find.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/mypage/pref.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/mypage/pref.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/static/js/seats/seatReservation.js" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/static/js/seats/seatReservation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/common/footer.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/common/footer.mustache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/templates/common/header.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/common/header.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/main/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/main/main.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/movies/edit.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/movies/edit.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/movies/list.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/movies/list.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/movies/new.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/movies/new.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/movies/view.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/movies/view.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/member/joinStep3.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/member/joinStep3.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/member/joinStep4.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/member/joinStep4.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/member/login.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/member/login.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/mypage/bookinglist.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/bookinglist.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/mypage/myinfo.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/myinfo.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/mypage/myinquiry.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/myinquiry.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/mypage/mymovie.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/mymovie.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/mypage/mypageHome.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/mypageHome.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/mypage/mypageLayout.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/mypageLayout.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/mypage/withdrawal.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/mypage/withdrawal.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/seats/seatReservation.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/seats/seatReservation.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/templates/ticketing/ticketing.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/templates/ticketing/ticketing.mustache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/api/MovieApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/api/MovieApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/config/GlobalModelAttributeAdvice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/config/GlobalModelAttributeAdvice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/config/WebConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/config/WebConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/MemberController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/MemberController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/MemberDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/MemberDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/MovieDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/MovieDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Movie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/MypageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/MypageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/SeatsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/SeatsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/TicketingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/controller/TicketingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/InquiryDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/InquiryDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/ReservationDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/dto/ReservationDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Member.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Member.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Reservation.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Reservation.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Review.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Review.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Screen.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Screen.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Showtime.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/entity/Showtime.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/interceptor/LoginCheckInterceptor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/interceptor/LoginCheckInterceptor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/MemberRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/MemberRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/MovieRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/ReviewRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/repository/ReviewRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/MemberService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/MemberService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/MovieService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/MovieServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/cinemoa/service/MovieServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/common.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/common.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/member/find.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/member/find.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/mypage/mypageHome.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/mypage/mypageHome.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/mypage/pref.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/mypage/pref.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/css/seats/seatReservation.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/css/seats/seatReservation.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/member/find.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/member/find.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/mypage/pref.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/mypage/pref.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/static/js/seats/seatReservation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/static/js/seats/seatReservation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common/footer.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/common/footer.mustache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/templates/common/header.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/common/header.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/main/main.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/main/main.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member/join.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/join.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/movies/edit.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/movies/edit.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/movies/list.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/movies/list.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/movies/new.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/movies/new.mustache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/movies/view.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/movies/view.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member/joinStep3.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/joinStep3.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member/joinStep4.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/joinStep4.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/member/login.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/member/login.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mypage/bookinglist.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/bookinglist.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mypage/myinfo.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/myinfo.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mypage/myinquiry.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/myinquiry.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mypage/mymovie.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/mymovie.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mypage/mypageHome.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/mypageHome.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mypage/mypageLayout.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/mypageLayout.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/mypage/withdrawal.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/mypage/withdrawal.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/seats/seatReservation.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/seats/seatReservation.mustache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/templates/ticketing/ticketing.mustache" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/templates/ticketing/ticketing.mustache" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -411,17 +191,6 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="cinemoa" type="f1a62948:ProjectNode" />
               </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="cinemoa" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-              </path>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="cinemoa" type="f1a62948:ProjectNode" />
-                <item name="Tasks" type="e4a08cd1:TasksNode" />
-                <item name="application" type="c8890929:TasksNode$1" />
-              </path>
             </expand>
             <select />
           </tree_state>
@@ -429,7 +198,20 @@
       </state>
     </system>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="board" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -438,6 +220,31 @@
     &quot;assignee&quot;: &quot;YOON-J11&quot;
   }
 }</component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="member" />
+                    <option name="lastUsedInstant" value="1752925502" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="board" />
+                    <option name="lastUsedInstant" value="1752925501" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
+  </component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/YOON-J11/cinemoa.git&quot;,
@@ -456,15 +263,32 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Gradle.cinemoa [bootRun].executor": "Run",
+    "Gradle.cinemoa [bootTestRun].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/cinemoa/src/main/resources/static/css/support",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "File.Encoding"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\cinemoa\src\main\resources\static\css\support" />
+      <recent name="C:\cinemoa\src\main\resources\static\images\icons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\cinemoa\src\main\resources\static\images\icons" />
+      <recent name="C:\cinemoa\src\main\resources\static\images\profile" />
+      <recent name="C:\cinemoa\src\main\resources\templates\payment" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Gradle.cinemoa [bootRun]">
     <configuration name="cinemoa [bootRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -487,6 +311,28 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="cinemoa [bootTestRun]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="bootTestRun" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -498,6 +344,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.cinemoa [bootRun]" />
+        <item itemvalue="Gradle.cinemoa [bootTestRun]" />
         <item itemvalue="Gradle.cinemoa [bootRun]" />
       </list>
     </recent_temporary>
@@ -511,6 +359,87 @@
       <option name="presentableId" value="Default" />
       <updated>1752644066840</updated>
     </task>
+    <task id="LOCAL-00001" summary="비회원 로그인 처리중">
+      <option name="closed" value="true" />
+      <created>1752738262594</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1752738262594</updated>
+    </task>
+    <task id="LOCAL-00002" summary="비회원 로그아웃, 로그인시 비밀번호확인란 추가">
+      <option name="closed" value="true" />
+      <created>1752740754479</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1752740754479</updated>
+    </task>
+    <task id="LOCAL-00003" summary="마이페이지 오류 수정">
+      <option name="closed" value="true" />
+      <created>1752742751125</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1752742751125</updated>
+    </task>
+    <task id="LOCAL-00004" summary="회원 탈퇴 로직 완료">
+      <option name="closed" value="true" />
+      <created>1752817030383</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1752817030383</updated>
+    </task>
+    <task id="LOCAL-00005" summary="프로필수정 작성중">
+      <option name="closed" value="true" />
+      <created>1752822901801</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1752822901801</updated>
+    </task>
+    <task id="LOCAL-00006" summary="마이페이지-예매내역 로직 완">
+      <option name="closed" value="true" />
+      <created>1752949411203</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1752949411203</updated>
+    </task>
+    <task id="LOCAL-00007" summary="엔티티 screenId 조정">
+      <option name="closed" value="true" />
+      <created>1752950543117</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1752950543117</updated>
+    </task>
+    <task id="LOCAL-00008" summary="예매/구매내역 로직 완료">
+      <option name="closed" value="true" />
+      <created>1753015175868</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1753015175868</updated>
+    </task>
+    <task id="LOCAL-00009" summary="나의영화 페이지 로직">
+      <option name="closed" value="true" />
+      <created>1753028427457</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1753028427457</updated>
+    </task>
+    <task id="LOCAL-00010" summary="고객센터-문의하기로직">
+      <option name="closed" value="true" />
+      <created>1753088206651</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1753088206651</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -525,7 +454,28 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="db연결 변경" />
-    <option name="LAST_COMMIT_MESSAGE" value="db연결 변경" />
+    <MESSAGE value="비회원 로그인 처리중" />
+    <MESSAGE value="비회원 로그아웃, 로그인시 비밀번호확인란 추가" />
+    <MESSAGE value="마이페이지 오류 수정" />
+    <MESSAGE value="회원 탈퇴 로직 완료" />
+    <MESSAGE value="프로필수정 작성중" />
+    <MESSAGE value="마이페이지-예매내역 로직 완" />
+    <MESSAGE value="엔티티 screenId 조정" />
+    <MESSAGE value="예매/구매내역 로직 완료" />
+    <MESSAGE value="나의영화 페이지 로직" />
+    <MESSAGE value="고객센터-문의하기로직" />
+    <option name="LAST_COMMIT_MESSAGE" value="고객센터-문의하기로직" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-field">
+          <url>file://$PROJECT_DIR$/src/main/java/com/cinemoa/controller/MypageController.java</url>
+          <line>35</line>
+          <properties field="cinemaService" class="com.cinemoa.controller.MypageController" />
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

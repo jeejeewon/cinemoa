@@ -2,7 +2,8 @@
 {{> common/header }}
 <div class="container reservation-wrapper">
     <!-- 왼쪽: 좌석 선택 영역 -->
-    <div class="seat-selection">
+    <div class="seat-selection" data-is-morning="{{isMorning}}" data-screen-type="{{screenType}}"
+        data-special="{{isImax}}">
         <div class="title">
             <h2>빠른예매</h2>
             <button class="reset-btn"><img src="/images/icons/reset-icon.png">초기화</button>
@@ -46,185 +47,24 @@
         <!-- 좌석 배치도 -->
         <div class="seat-map">
             <div class="screen-label">SCREEN</div>
-
-            <div class="seat-rows">
-                <!-- 좌석 행들 -->
-                <div class="row" data-row="A">
-                    <span class="row-label">A</span>
-                    <!-- 좌석들 -->
-                    <span class="seat">1</span>
-                    <span class="seat">2</span>
-                    <span class="seat">3</span>
-                    <span class="seat">4</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">5</span>
-                    <span class="seat">6</span>
-                    <span class="seat">7</span>
-                    <span class="seat">8</span>
-                    <span class="seat">9</span>
-                    <span class="seat">10</span>
-                    <span class="seat">11</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat vip">12</span>
-                    <span class="seat vip">13</span>
-                    <span class="seat vip">14</span>
-                    <span class="seat vip">15</span>
-                </div>
-                <!-- 좌석 행들 -->
-                <div class="row" data-row="B">
-                    <span class="row-label">B</span>
-                    <!-- 좌석들 -->
-                    <span class="seat">1</span>
-                    <span class="seat">2</span>
-                    <span class="seat">3</span>
-                    <span class="seat">4</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">5</span>
-                    <span class="seat">6</span>
-                    <span class="seat">7</span>
-                    <span class="seat">8</span>
-                    <span class="seat">9</span>
-                    <span class="seat">10</span>
-                    <span class="seat">11</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">12</span>
-                    <span class="seat">13</span>
-                    <span class="seat">14</span>
-                    <span class="seat">15</span>
-                </div>
-                <!-- 좌석 행들 -->
-                <div class="row" data-row="C">
-                    <span class="row-label">C</span>
-                    <!-- 좌석들 -->
-                    <span class="seat">1</span>
-                    <span class="seat">2</span>
-                    <span class="seat">3</span>
-                    <span class="seat">4</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">5</span>
-                    <span class="seat">6</span>
-                    <span class="seat">7</span>
-                    <span class="seat">8</span>
-                    <span class="seat">9</span>
-                    <span class="seat">10</span>
-                    <span class="seat">11</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">12</span>
-                    <span class="seat">13</span>
-                    <span class="seat">14</span>
-                    <span class="seat">15</span>
-                </div>
-                <!-- 좌석 행들 -->
-                <div class="row" data-row="D">
-                    <span class="row-label">D</span>
-                    <!-- 좌석들 -->
-                    <span class="seat">1</span>
-                    <span class="seat">2</span>
-                    <span class="seat">3</span>
-                    <span class="seat">4</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">5</span>
-                    <span class="seat">6</span>
-                    <span class="seat">7</span>
-                    <span class="seat">8</span>
-                    <span class="seat">9</span>
-                    <span class="seat">10</span>
-                    <span class="seat">11</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">12</span>
-                    <span class="seat">13</span>
-                    <span class="seat">14</span>
-                    <span class="seat">15</span>
-                </div>
-                <!-- 좌석 행들 -->
-                <div class="row" data-row="E">
-                    <span class="row-label">E</span>
-                    <!-- 좌석들 -->
-                    <span class="seat">1</span>
-                    <span class="seat">2</span>
-                    <span class="seat">3</span>
-                    <span class="seat">4</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">5</span>
-                    <span class="seat">6</span>
-                    <span class="seat">7</span>
-                    <span class="seat">8</span>
-                    <span class="seat">9</span>
-                    <span class="seat">10</span>
-                    <span class="seat">11</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">12</span>
-                    <span class="seat">13</span>
-                    <span class="seat">14</span>
-                    <span class="seat">15</span>
-                </div>
-                <!-- 좌석 행들 -->
-                <div class="row" data-row="F">
-                    <span class="row-label">F</span>
-                    <!-- 좌석들 -->
-                    <span class="seat">1</span>
-                    <span class="seat">2</span>
-                    <span class="seat">3</span>
-                    <span class="seat">4</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">5</span>
-                    <span class="seat">6</span>
-                    <span class="seat">7</span>
-                    <span class="seat">8</span>
-                    <span class="seat">9</span>
-                    <span class="seat">10</span>
-                    <span class="seat">11</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">12</span>
-                    <span class="seat">13</span>
-                    <span class="seat">14</span>
-                    <span class="seat">15</span>
-                </div>
-                <!-- 좌석 행들 -->
-                <div class="row" data-row="G">
-                    <span class="row-label">G</span>
-                    <!-- 좌석들 -->
-                    <span class="seat">1</span>
-                    <span class="seat">2</span>
-                    <span class="seat">3</span>
-                    <span class="seat">4</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">5</span>
-                    <span class="seat">6</span>
-                    <span class="seat">7</span>
-                    <span class="seat">8</span>
-                    <span class="seat">9</span>
-                    <span class="seat">10</span>
-                    <span class="seat">11</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">12</span>
-                    <span class="seat">13</span>
-                    <span class="seat">14</span>
-                    <span class="seat">15</span>
-                </div>
-                <!-- 좌석 행들 -->
-                <div class="row" data-row="H">
-                    <span class="row-label">H</span>
-                    <!-- 좌석들 -->
-                    <span class="seat">1</span>
-                    <span class="seat">2</span>
-                    <span class="seat">3</span>
-                    <span class="seat">4</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">5</span>
-                    <span class="seat">6</span>
-                    <span class="seat">7</span>
-                    <span class="seat">8</span>
-                    <span class="seat">9</span>
-                    <span class="seat">10</span>
-                    <span class="seat">11</span>
-                    <span class="seat-gap"></span><!-- 간격용 -->
-                    <span class="seat">12</span>
-                    <span class="seat">13</span>
-                    <span class="seat">14</span>
-                    <span class="seat">15</span>
-                </div>
+            {{#seatRowList}}
+            <div class="row" data-row="{{row}}">
+                <span class="row-label">{{row}}</span>
+                {{#seats}}
+                {{#isGap}}
+                <span class="seat-gap"></span>
+                {{/isGap}}
+                {{^isGap}}
+                <span class="seat
+                    {{#isReserved}}disabled{{/isReserved}}
+                    {{#isVip}}vip{{/isVip}}
+                    {{#isAccessible}}accessible{{/isAccessible}}" data-seat-id="{{seatId}}" data-price="{{price}}">
+                    {{seatNumber}}
+                </span>
+                {{/isGap}}
+                {{/seats}}
             </div>
+            {{/seatRowList}}
         </div>
     </div>
 
@@ -232,38 +72,42 @@
     <div class="reservation-summary">
         <div class="movie-info">
             <div class="movie-title">
-                <h3>F1 더 무비</h3>
-                <p>2D(자막)</p>
+                <h3>{{movie.title}} <img src="{{ageImagePath}}" alt="관람등급" class="rating"></h3>
+                <p>{{movie.genre}}</p>
             </div>
             <div class="cinema-info">
                 <div class="cinema-info-left">
-                    <div>
-                        <p>서면대한<br>리클라이너 3관</p>
-                        <p>2025.07.14(월)</p>
-                    </div>
-
-                    <p>20:35 ~ 23:20</p>
+                    <p style="margin-bottom: 25px;">
+                        {{screen.screenName}}
+                        {{#screenType}}
+                        {{^isStandard}} ({{screenType}}){{/isStandard}}
+                        {{/screenType}}
+                    </p>
+                    <p>{{formattedDate}}</p>
+                    <p>
+                        {{#isMorning}}☀️ {{/isMorning}}{{formattedStartTime}} ~ {{formattedEndTime}}
+                    </p>
                 </div>
-
-                <img src="/images/movie.jpg" alt="포스터" class="poster">
+                <img src="/images/movie/{{movie.mainImageUrl}}" alt="포스터" class="poster">
             </div>
         </div>
 
         <div class="legend">
             <ul>
                 <li><span class="box selected"></span>선택</li>
-                <li><span class="box reserved"></span>예매완료</li>
-                <li><span class="box disabled"></span>선택불가</li>
-                <li><span class="box normal"></span>일반</li>
-                <li><span class="box vip"></span>장애인석</li>
+                <li><span class="box disabled">✕</span>선택불가</li>
+            </ul>
+            <ul>
+                <li><span class="box normal"></span>일반석</li><!--seats테이블의 seat_typs STANDARD-->
+                <li><span class="box accessible"></span>장애인석</li><!--seats테이블의 seat_typs DISABLED-->
+                <li><span class="box vip"></span>VIP석</li><!--seats테이블의 seat_typs VIP-->
             </ul>
         </div>
 
         <div class="selected-seats">
             <h4>선택좌석</h4>
             <ul>
-                <li>A5</li>
-                <li>B6</li>
+
             </ul>
         </div>
 
@@ -274,9 +118,22 @@
 
         <div class="navigation">
             <button class="prev">이전</button>
-            <button class="next">다음</button>
+            <button class="next" type="button">다음</button>
         </div>
     </div>
 </div>
+
+<!-- 로그인 유도 모달 -->
+<div id="loginRequiredModal" class="modal" style="display: none;">
+  <div class="modal-content">
+    <p>로그인이 필요한 서비스입니다.</p>
+    <div class="modal-actions">
+      <button id="loginMemberBtn">회원 로그인</button>
+      <button id="loginGuestBtn">비회원 로그인</button>
+    </div>
+  </div>
+</div>
+
+
 <script src="/js/seats/seatReservation.js"></script>
 {{> common/footer }}

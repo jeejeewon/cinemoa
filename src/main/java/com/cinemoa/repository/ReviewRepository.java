@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 
 @Repository
 public interface ReviewRepository extends JpaRepository<Review, Long> {
@@ -24,4 +25,8 @@ public interface ReviewRepository extends JpaRepository<Review, Long> {
 
     // 영화별 전체 리뷰 수 조회
     long countByMovieId(Long movieId);
+
+    boolean existsByMovieIdAndUserId(Long movieId, String userId);
+
+    Optional<Review> findByMovieIdAndUserId(Long movieId, String userId);
 }

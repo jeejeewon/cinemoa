@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll('input[name="preferredGenres[]"]').forEach(cb => {
       cb.checked = false;
       const label = cb.closest(".genre-item");
-      label.classList.remove("checked");  // ✅ 이 줄이 빠져 있었음!
+      label.classList.remove("checked");
     });
   });
 

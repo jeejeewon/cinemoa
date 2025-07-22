@@ -27,7 +27,7 @@ public class Review {
     private Long movieId;
 
     @Column(name = "user_id")
-    private Long userId;
+    private String userId;
 
     @Column(name = "content")
     private String content;

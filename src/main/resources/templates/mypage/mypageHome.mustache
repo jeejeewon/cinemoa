@@ -2,16 +2,16 @@
 <div class="mypage-home-card">
     <div class="card-top">
         {{#profileImg}}
-            <img src="/upload/profile/{{profileImg}}" alt="프로필 이미지">
+            <img src="/images/profile/{{profileImg}}" alt="프로필 이미지">
         {{/profileImg}}
         {{^profileImg}}
-            <img src="/images/icons/default-profile.png" alt="기본 이미지">
+            <img src="/images/profile/default-profile.png" alt="기본 이미지">
         {{/profileImg}}
         <div class="profile-info">
             <h1>안녕하세요! <span>{{name}}</span>님!</h1>
             <P>아이디 : <span>{{memberId}}</span></P>
             <p>닉네임 : <span>{{nickname}}</span></p>
-            <button onclick="openProfileEditModal()">프로필 수정</button><!--클릭시 프로필 수정 페이지가 팝업으로 나타남-->
+            <button onclick="openProfileEditPopup()">프로필 수정</button><!--클릭시 프로필 수정 페이지가 팝업으로 나타남-->
         </div>
     </div>
     <!--<div class="card-bottom">추후 멤버십등급, 포인트 등..이곳에 나타낼 예정</div>-->
@@ -54,7 +54,7 @@
         {{#recentReservations}}
         <tr>
             <td>{{movieTitle}}</td>
-            <td>{{reservationTime}}</td>
+            <td>{{formattedReservationDate}}</td>
             <td>{{cinemaName}}</td>
         </tr>
         {{/recentReservations}}
@@ -94,3 +94,4 @@
         </tbody>
     </table>
 </div>
+<script src="/js/mypage/mypageHome.js"></script>

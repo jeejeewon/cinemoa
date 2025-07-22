@@ -48,5 +48,9 @@ public class Member {
     //updatable = false : UPDATE 쿼리에도 이 컬럼은 포함하지 않음
     @Column(name = "reg_date", insertable = false, updatable = false)
     private LocalDateTime regDate;
+    
+    //탈퇴여부
+    @Column(name = "is_deleted")
+    private boolean isDeleted = false;
 
 }

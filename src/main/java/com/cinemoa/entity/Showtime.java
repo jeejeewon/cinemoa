@@ -26,21 +26,18 @@ public class Showtime {
     @JoinColumn(name = "movie_id", nullable = false)
     private Movie movie;
 
+    @Column(name = "screen_id", insertable = false, updatable = false)
+    private Long screenId; // ID 값만 직접 조회하고 싶을 때 사용
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "screen_id", nullable = false)
-    private Screen screen;
+    private Screen screen; // 연관관계 객체로 접근할 때 사용
 
     @Column(name = "start_time", nullable = false)
     private LocalDateTime startTime;
 
     @Column(name = "end_time", nullable = false)
     private LocalDateTime endTime;
-
-    @Column(nullable = false, precision = 8, scale = 2)
-    private BigDecimal price;
-
-    @Column(name = "available_seats", nullable = false)
-    private Integer availableSeats;
 
     @Column(name = "created_at", updatable = false)
     private LocalDateTime createdAt;

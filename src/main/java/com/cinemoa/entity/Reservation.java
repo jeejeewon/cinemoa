@@ -29,13 +29,26 @@ public class Reservation {
     @JoinColumn(name = "cinema_id")
     private Cinema cinema; // 영화관
 
-    private Integer screenId; // 상영관 ID
+    @Column(name = "screen_id")
+    private Integer screenId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "screen_id", insertable = false, updatable = false)
+    private Screen screen;
 
     private String seatInfo; // 예매 좌석 정보 (예: A5,A6)
 
     private LocalDateTime reservationTime; // 예매 시간
 
+    @OneToOne(mappedBy = "reservation", fetch = FetchType.LAZY)
+    private Payment payment;
+
     private String paymentMethod; // 결제 수단 (계좌이체 / 신용카드)
 
     private String status; // 예매 상태 (예약완료 / 취소됨)
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "showtime_id", nullable = false)
+    private Showtime showtime;
+
 }

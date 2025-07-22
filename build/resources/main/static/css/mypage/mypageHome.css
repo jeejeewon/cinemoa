@@ -17,7 +17,7 @@
   height: 130px;
   border-radius: 50%;
   object-fit: cover;
-  border: 1px solid #ccc;
+  border : 0.5px solid #ddd;
 }
 
 .profile-info{
@@ -164,14 +164,15 @@
 }
 .col-title span{
   font-size: 14px;
-  color: #999;
 }
 
 /* 테이블 */
 .mypage-table {
   width: 100%;
-  border-collapse: collapse;
-  background: #fff;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
   overflow: hidden;
 }
 .mypage-table thead{
@@ -179,15 +180,17 @@
 }
 .mypage-table th,
 .mypage-table td {
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
   padding: 10px;
   font-size: 14px;
 }
-
+.mypage-table tbody tr:last-child td {
+  border-bottom: none;
+}
 /* 테이블 컬럼 비율 조정 */
 .mypage-table tr th:nth-child(1),
 .mypage-table tr td:nth-child(1) {
-  width: 60%;
+  width: 70%;
   text-align: left;
   padding-left: 15px;
 }
@@ -195,7 +198,8 @@
 .mypage-table tr td:nth-child(2),
 .mypage-table tr th:nth-child(3),
 .mypage-table tr td:nth-child(3) {
-  width: 20%;
+  width: 15%;
+  text-align: center;
 }
 
 .answered {

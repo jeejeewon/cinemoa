@@ -1,0 +1,29 @@
+.bookingdetail-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.container-title-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.back-button svg {
+  width: 18px;
+  height: 18px;
+}
+
+.container-title {
+  color: #006f7c;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.detail-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+}

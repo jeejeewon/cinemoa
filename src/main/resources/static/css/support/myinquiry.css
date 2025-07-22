@@ -1,0 +1,102 @@
+.title-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-title {
+  color: #006f7c;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.title-area a {
+  font-size: 13px;
+  border: 1px solid #ddd;
+  background: #fff;
+  padding: 4px 10px;
+  border-radius: 5px;
+  margin-left: auto;
+}
+
+.inquiry-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+/* 기본 스타일 */
+.inquiry-table th,
+.inquiry-table td {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid #e0e0e0;
+  vertical-align: middle;
+  white-space: nowrap;
+}
+
+.inquiry-table tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* 제목만 왼쪽 정렬 */
+.inquiry-table th:nth-child(2),
+.inquiry-table td:nth-child(2) {
+  text-align: left;
+}
+
+/* 번호 칼럼 더 좁게 */
+.inquiry-table th:nth-child(1),
+.inquiry-table td:nth-child(1) {
+  width: 40px;
+}
+
+/* 등록일 칼럼 좁게 */
+.inquiry-table th:nth-child(3),
+.inquiry-table td:nth-child(3) {
+  width: 100px;
+}
+
+/* 답변 상태 칼럼도 좁게 */
+.inquiry-table th:nth-child(4),
+.inquiry-table td:nth-child(4) {
+  width: 100px;
+}
+
+.inquiry-table th {
+  background-color: #f8f8f8;
+  font-weight: 600;
+}
+
+.inquiry-link {
+  color: #333;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.inquiry-link:hover {
+  color: #006f7c;
+}
+
+.answered {
+  color: #006f7c;
+}
+
+.waiting {
+  color: gray;
+  font-style: italic;
+}
+
+.tr-style {
+  transition: all 0.2s ease;
+}
+
+.tr-style:hover {
+  background-color: #f1f9fa;
+}

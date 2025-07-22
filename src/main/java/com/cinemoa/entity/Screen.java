@@ -37,6 +37,9 @@ public class Screen {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    @Column(name = "screen_type")
+    private String screenType;
+
     @PrePersist
     protected void onCreate() {
         createdAt = LocalDateTime.now();

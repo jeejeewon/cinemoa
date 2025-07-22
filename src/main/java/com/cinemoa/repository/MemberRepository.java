@@ -2,6 +2,7 @@ package com.cinemoa.repository;
 
 import com.cinemoa.dto.InquiryDto;
 import com.cinemoa.dto.ReservationDto;
+import com.cinemoa.entity.Inquiry;
 import com.cinemoa.entity.Member;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
@@ -62,15 +63,8 @@ public interface MemberRepository extends JpaRepository<Member, String> {
     List<ReservationDto> getRecentReservations(@Param("memberId") String memberId);
 
     // 최근 문의 내역 5건
-    @Query(value = """
-                SELECT 
-                    title,
-                    DATE_FORMAT(reg_date, '%Y-%m-%d') AS regDate,
-                    reply_content AS replyContent
-                FROM inquiry
-                WHERE member_id = :memberId
-                ORDER BY reg_date DESC
-                LIMIT 5
-                """, nativeQuery = true)
-    List<InquiryDto> getRecentInquiries(@Param("memberId") String memberId);
+    @Query("SELECT i FROM Inquiry i WHERE i.member.memberId = :memberId ORDER BY i.regDate DESC")
+    List<Inquiry> getRecentInquiries(@Param("memberId") String memberId);
+
+
 }

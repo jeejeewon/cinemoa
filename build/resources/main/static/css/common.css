@@ -77,11 +77,10 @@ header {
   top: 100%;
   left: 0;
   width: 100vw;
-  /* 화면 전체 너비 */
   background: #fff;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
   padding: 20px 0;
-  z-index: 999;
+  z-index: 9999;
   overflow-x: hidden;
   border-top: 3px solid transparent;
   border-image: linear-gradient(to right, #006f7c, #95c0c3) 1;

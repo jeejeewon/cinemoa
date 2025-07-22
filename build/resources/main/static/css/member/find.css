@@ -66,15 +66,19 @@ body {
   display: block;
 }
 .find-table {
-  width: 100%;
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 15px;
 }
 
 /* ===== [ 입력 필드 ] ===== */
 .input-group {
-  text-align: left;
+  display: flex;
+  gap: 5px;
+  width: 100%;
+  align-items: center;
 }
-
 .auth-box {
   display: flex;
   gap: 10px;
@@ -90,7 +94,9 @@ input[type="text"] {
   font-size: 14px;
   transition: border-color 0.2s;
   background-color: white;
-  margin: 5px 0;
+}
+input[type="email"]{
+  flex: 1;
 }
 
 input:focus {
@@ -128,7 +134,6 @@ input:focus {
 .btn-confirm {
   width: 100%;
   max-width: 200px;
-  margin-top: 10px;
   padding: 10px 20px;
   background-color: #006f7c;
   color: white;
@@ -141,10 +146,6 @@ input:focus {
 
 .auth-btn {
   width: auto;
-}
-
-.btn-find:hover, .auth-btn:hover{
-  background-color: #004f59;
 }
 
 .btn-find:disabled {
