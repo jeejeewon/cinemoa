@@ -57,10 +57,9 @@ Spring Boot 기반으로 개발 중인 영화 예매 플랫폼입니다.
 ## 📝 담당 업무 (이지원)
 
 ### 영화
-- 영화 등록, 수정, 삭제 등 관리
-- 상영 상태 반영
-<img width="1300" height="1475" alt="제목 없음-2" src="https://github.com/user-attachments/assets/b089c524-7295-4fb7-86e8-767d38babac1" />
-<img width="1300" height="1475" alt="제목 없음-2" src="https://github.com/user-attachments/assets/efd806f4-610b-4616-8d75-e4851629fae7" />
+- 영화 등록, 수정, 삭제, 상영상태 등 영화 관리 기능
+<img width="1300" height="1475" src="https://github.com/user-attachments/assets/b089c524-7295-4fb7-86e8-767d38babac1" />
+<img width="1300" height="1475" src="https://github.com/user-attachments/assets/efd806f4-610b-4616-8d75-e4851629fae7" />
 
 
 ### 예매
