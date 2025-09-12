@@ -59,21 +59,18 @@ Spring Boot 기반으로 개발 중인 영화 예매 플랫폼입니다.
 ### 영화
 - 영화 등록, 수정, 삭제, 상영상태 등 영화 관리 기능
 <img width="1300" height="1475" src="https://github.com/user-attachments/assets/b089c524-7295-4fb7-86e8-767d38babac1" />
+
+- 좋아요, 댓글 및 평점 기능
 <img width="1300" height="1475" src="https://github.com/user-attachments/assets/efd806f4-610b-4616-8d75-e4851629fae7" />
+
+- 영화명, 배우명, 감독명으로 검색 기능 구현
+<img width="1300" height="564" src="https://github.com/user-attachments/assets/092625ca-3fe2-4cff-bcce-ce64f069636f" />
+
 
 
 ### 예매
 - 예매율 적용 후 순위 출력  
-  <img width="1300" height="814" alt="제목 없음-1" src="https://github.com/user-attachments/assets/9d5d9f5d-7f75-49a2-a962-cdd3f8d4cc50" />
+  <img width="1300" height="814" src="https://github.com/user-attachments/assets/9d5d9f5d-7f75-49a2-a962-cdd3f8d4cc50" />
 
 - 영화 예매 페이지
   <img src="https://github.com/user-attachments/assets/09ffa87e-f869-473d-a68b-31b6fde3bb1a">
-  
-
-### 좋아요
-- 좋아요 수 실시간 반영
-- 중복없이 영화 당 한번씩만 가능하도록 구현
-
-### 댓글 및 평점
-- 댓글 수 실시간 반영
-- 평점 등록 및 반영
