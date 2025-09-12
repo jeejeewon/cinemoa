@@ -64,9 +64,12 @@ Spring Boot 기반으로 개발 중인 영화 예매 플랫폼입니다.
 
 
 ### 예매
-- 예매율 적용 후 순위 출력
+- 예매율 적용 후 순위 출력  
+  <img width="1300" height="814" alt="제목 없음-1" src="https://github.com/user-attachments/assets/9d5d9f5d-7f75-49a2-a962-cdd3f8d4cc50" />
+
+- 영화 예매 페이지
+  <img src="https://github.com/user-attachments/assets/09ffa87e-f869-473d-a68b-31b6fde3bb1a">
   
-- 영화 예매 페이지 작업중
 
 ### 좋아요
 - 좋아요 수 실시간 반영
