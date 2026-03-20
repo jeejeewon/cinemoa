@@ -1,76 +1,70 @@
-# CineMoa | 영화 예매 사이트
+# CineMoa | 영화 예매 플랫폼
+**Spring Boot 및 JPA 기반의 영화 정보 제공 및 예매 시스템**
 
-Spring Boot 기반으로 개발 중인 영화 예매 플랫폼입니다.  
-사용자는 영화 목록을 조회하고, 상세 페이지에서 정보를 확인한 뒤, 예매까지 진행할 수 있도록 설계되었습니다.
+본 프로젝트는 영화 목록 조회부터 상세 정보 확인, 실시간 예매 프로세스까지 통합한 영화 예매 플랫폼입니다. Spring Boot와 JPA를 활용하여 데이터 영속성을 관리하고, 효율적인 검색 및 랭킹 알고리즘을 구현하는 데 초점을 맞추어 개발 중인 프로젝트입니다.
 
-> 🔧 본 프로젝트는 현재 **개발 중**입니다. 지속적으로 기능이 추가될 예정입니다.
-
----
-
-> **안내**  
-> 이 리드미는 본 프로젝트 저장소 [cinemoa](https://github.com/YOON-J11/cinemoa)에서 일부 내용을 복사해
-> 팀원 작업 내용은 제외하고 본인 작업 내용 위주로 정리한 파일입니다.  
-> 본 프로젝트는 팀원과 함께 진행 중이며, 이 저장소는 개인 작업 및 보여주기용으로 사용되고 있습니다.
+> **Notice** > 본 저장소는 팀 프로젝트 [cinemoa](https://github.com/YOON-J11/cinemoa)의 전체 내용 중 본인의 작업 파트를 중심으로 재구성한 개인 포트폴리오용 저장소입니다.
 
 ---
 
-## 프로젝트 개요
+## 1. 프로젝트 개요
 
 - **프로젝트명**: CineMoa  
 - **개발 기간**: 2025.06.30 ~ (진행 중)  
-- **개발 인원**: 2명
-  
+- **참여 인원**: 2명  
+- **핵심 목표**: Spring Boot 기반의 안정적인 백엔드 구조 설계 및 사용자 중심의 예매 인터페이스 구현  
+
 ---
 
-## 사용 기술
+## 2. 기술 스택
 
-### Backend
-![Java](https://img.shields.io/badge/Java-007396?style=for-the-badge&logo=openjdk&logoColor=white)
-![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
-![Spring MVC](https://img.shields.io/badge/Spring_MVC-6DB33F?style=for-the-badge&logo=spring&logoColor=white)
-![JPA](https://img.shields.io/badge/JPA-FF6F61?style=for-the-badge)
+### Backend & Database
+- Java / Spring Boot / Spring MVC / Spring Data JPA
+- MySQL
 
 ### Frontend
-![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![Mustache](https://img.shields.io/badge/Mustache-000000?style=for-the-badge&logo=mustache&logoColor=white)
+- HTML5 / CSS3 / JavaScript / Mustache
 
-### Database
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-
-### 개발 환경 및 도구
-![IntelliJ IDEA](https://img.shields.io/badge/IntelliJ_IDEA-000000?style=for-the-badge&logo=intellijidea&logoColor=white)
-![Gradle](https://img.shields.io/badge/Gradle-02303A?style=for-the-badge&logo=gradle&logoColor=white)
-![Git](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+### Tools & Environment
+- IntelliJ IDEA / Gradle
+- Git / GitHub
 
 ---
 
-## DB 구성
+## 3. 데이터베이스 설계 (ERD)
 
-아래는 프로젝트에서 사용된 테이블 간의 ERD(Entity Relationship Diagram)입니다.  
-<img width="1319" height="859" alt="ERD" src="https://github.com/user-attachments/assets/069a7c38-4b86-48a1-8051-0a2880222938" />
+![ERD](https://github.com/user-attachments/assets/069a7c38-4b86-48a1-8051-0a2880222938)
 
 ---
 
-## 담당 업무 (이지원)
+## 4. 담당 업무 및 기능 구현 상세
 
-### 영화
-- 영화 등록, 수정, 삭제, 상영상태 등 영화 관리 기능
-<img width="1300" height="1475" src="https://github.com/user-attachments/assets/b089c524-7295-4fb7-86e8-767d38babac1" />
+### 영화 정보 및 콘텐츠 관리 유닛
+- **데이터 관리 로직**: 영화 등록, 수정, 삭제 및 상영 상태 전환 등 영화 정보 전반에 대한 관리 로직을 구현했습니다.
+- **인터랙션 및 평가 시스템**: 영화별 좋아요, 댓글 및 평점 기능을 구축해서 사용자 참여형 콘텐츠 서비스를 설계했습니다.
+- **다각도 검색 로직**: 영화명, 출연 배우, 감독명 등 다양한 속성 기반의 검색 기능을 구현했습니다.
 
-- 좋아요, 댓글 및 평점 기능
-<img width="1300" height="1475" src="https://github.com/user-attachments/assets/efd806f4-610b-4616-8d75-e4851629fae7" />
+### 예매 프로세스 및 랭킹 시스템
+- **데이터 기반 랭킹**: 예매율 데이터를 실시간으로 집계하고 순위를 산출해서 메인 화면에 반영하는 기능을 구현했습니다.
+- **예매 인터페이스**: 영화 선택부터 일정 확인까지 이어지는 예매 흐름을 직관적으로 구성했습니다.
 
-- 영화명, 배우명, 감독명으로 검색 기능 구현
-<img width="1300" height="564" src="https://github.com/user-attachments/assets/092625ca-3fe2-4cff-bcce-ce64f069636f" />
+---
 
+## 5. 주요 구현 화면
 
+| 영화 관리 및 정보 등록 | 콘텐츠 인터랙션 (좋아요/댓글) |
+| :--- | :--- |
+| ![영화관리](https://github.com/user-attachments/assets/b089c524-7295-4fb7-86e8-767d38babac1) | ![인터랙션](https://github.com/user-attachments/assets/efd806f4-610b-4616-8d75-e4851629fae7) |
 
-### 예매
-- 예매율 적용 후 순위 출력  
-  <img width="1300" height="814" src="https://github.com/user-attachments/assets/9d5d9f5d-7f75-49a2-a962-cdd3f8d4cc50" />
+| 멀티 조건 검색 시스템 | 예매율 기반 랭킹 및 예매 페이지 |
+| :--- | :--- |
+| ![검색](https://github.com/user-attachments/assets/092625ca-3fe2-4cff-bcce-ce64f069636f) | ![예매](https://github.com/user-attachments/assets/9d5d9f5d-7f75-49a2-a962-cdd3f8d4cc50) |
 
-- 영화 예매 페이지
-  <img src="https://github.com/user-attachments/assets/09ffa87e-f869-473d-a68b-31b6fde3bb1a">
+---
+
+## 6. 업데이트 안내
+
+본 프로젝트는 현재 개발이 진행 중인 상태이며, 다음 기능들을 추가로 구현할 예정입니다.
+- 사용자 인증 보안 강화
+- 좌석 선택 및 결제 모듈 통합
+- 관리자 통계 대시보드 구축
